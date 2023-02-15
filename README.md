@@ -1,1 +1,1 @@
-# restaurant
+# Team HotSix < Restaurant Reservation ProJect >
