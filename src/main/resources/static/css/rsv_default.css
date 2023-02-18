@@ -1,0 +1,19 @@
+table, tr, td, th{
+  border-collapse: collapse;
+}
+
+body, div,
+ul, ol, li, 
+h1, h2, h3, h4, h5, h6, 
+pre, code, form, input, textarea, p, blockquote, table, tr, th, td, img{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  word-wrap: break-word;
+}
