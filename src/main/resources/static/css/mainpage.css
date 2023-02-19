@@ -1,0 +1,141 @@
+.main-course{
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+}
+
+.brunch_course{
+
+    display:table;
+}
+
+.dinner_course{
+    
+    display:table;
+}
+
+.menu-name, .menu-code {
+    font-size: 25px;
+    color: black;
+}
+
+.info-text menu-age1 {
+    font-size: 20px;
+    color: black;
+}
+
+.img-container {
+    display: flex;
+
+    margin: 1px;
+    margin-left: 30px;
+}
+
+.menu-img {
+    border: 1px solid black;
+
+    width: 700px;
+    height: 400px;
+
+    
+}
+.menu-button1 {
+    position: absolute;
+    top: 69%;
+    left: 34%;
+
+    width: auto;
+    padding: 8px; 
+
+    font-size: 15px;
+}
+
+.menu-button2 {
+    position: absolute;
+    top: 69%;
+    left: 84%;
+
+    width: auto;
+    padding: 8px; 
+
+    font-size: 15px;
+}
+
+.menu-button3 {
+    position: absolute;
+    top: 84%;
+    left: 34%;
+
+    width: auto;
+    padding: 8px; 
+
+    font-size: 15px;
+}
+
+.menu-button4 {
+    position: absolute;
+    top: 84%;
+    left: 80%;
+
+    width: auto;
+    padding: 8px; 
+
+    font-size: 15px;
+}
+
+.button-container{
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    /* height: 70vh; */
+    justify-content: center;
+    /* align-items: end; */
+
+    bottom: 0px;
+    transform: translatY(-100%);
+
+}
+
+.button-group{
+    display: flex;
+
+    width: 800px;
+    height: 50px;
+
+}
+
+.button-group .reserve {
+    background-color: black;
+
+    width: 50%;
+
+    font-size: 30px;
+    color: white;
+}
+
+.menu01{
+    display:table-cell; 
+    vertical-align:middle;
+}
+
+html{overflow: hidden;}
+ 
+html, body{width: 100%; height: 100%;}
+ 
+.content{
+	width: 100%; height: 100%;
+	background-color: blueviolet;
+	
+	position: relative;
+}
+.content > h1{
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%,-50%);
+ 
+	font-size: 20em;
+	font-weight: bold;
+	text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+ 
+}
+.content:nth-child(even){background-color: #333;}
