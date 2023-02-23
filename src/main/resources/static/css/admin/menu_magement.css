@@ -70,7 +70,7 @@
 .img-container {
     display: flex;
 
-    margin-left: 20px;
+    margin-left: 42%;
     margin-bottom: 10px;
     width: 300px;
     height: 300px;
@@ -79,9 +79,7 @@
 }
 
 .menu-img {
-    margin-top: 15px;
-    width: 330px;
-    height: 90%;
+    height: 100%;
 }
 
 .menu-info {
@@ -89,7 +87,7 @@
     flex-direction: column;
     flex-grow: 1;
 
-    margin-left: 35px;
+    margin-left: 20px;
 }
 
 .menu-code {
@@ -98,6 +96,7 @@
     align-items: center;
 
     padding: 3px 0px 3px 0px;
+
 
     border-radius: 4px;
     width: 80px;
@@ -130,26 +129,4 @@
 
 .info-text b {
     font-size: 25px;
-}
-
-.menu-icon{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 320px;
-}
-
-.menu-icon i {
-    font-size: 20px;
-
-}
-
-.delete-button {
-    background:none;
-    border: none;
-}
-
-.delete-button:hover {
-    background-color: #ffb6d1;
-    color: black;
-    cursor: pointer;
 }
