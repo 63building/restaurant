@@ -4,26 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/reservation_check.css">
+    <link rel="stylesheet" href="/static/css/check.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="http://code-jquery.com/jquery-latest.min.js"></script>
     <title>hotsix</title>
 </head>
 <body>
-    <header class="header-container"><p class="header-text">hotsix</p></header>
-    <h1 class="home"><i class="fa-solid fa-house fa-lg"></i></h1>
+    <header class="header-container">hotsix</header>
+    <h1 class="home"><i class="fa-solid fa-house fa-3x"></i></h1>
     <div class="main-container">
         <div><h1 class="page-title">예약 확인</h1></div>
 
-        <div class="reservation-list">
+        <div class="reserve-list">
             <h2 class="main-name">예약 정보 확인</h2>
             <div class="menu-line"></div>
+
+            <h2 class="menu-name">예약 고객 정보</h2> 
+            <div class="main-box">
+                <table class="reserve-data" >
+                    <tr>                       
+                        <th>성명(한글)</th>
+                        <td>홍길동</td> 
+                    </tr>
+                    <tr>                       
+                        <th>예약번호</th>
+                        <td>20230218</td>
+                    </tr>
+                    <tr>
+                        <th>연락처</th>
+                        <td>010-1111-2222</td>
+                    </tr>        
+                    <tr>
+                        <th>이메일</th>
+                        <td>koreait@google.com</td>
+                    </tr>  
+                </table>
+            </div>
 
             <div class="serve-container">
                 <h2 class="menu-name">예약 날짜</h2>
                 <div class="main-box">
-                    <table class="reservation-date" >
+                    <table class="reserve-date" >
                         <tr>                       
                             <th>예약일</th> 
                             <td>2023.02</td>
@@ -48,29 +71,6 @@
                         </tr>
                     </table> 
                 </div>
-                
-
-                <h2 class="menu-name">예약 고객 정보</h2> 
-                <div class="main-box">
-                    <table class="reservation-data" >
-                        <tr>                       
-                            <th>예약번호</th>
-                            <td>20230218</td>
-                        </tr>
-                        <tr>                       
-                            <th>성명(한글)</th>
-                            <td>코리아it</td>
-                        </tr>
-                        <tr>
-                            <th>연락처</th>
-                            <td>010-1111-2222</td>
-                        </tr>        
-                        <tr>
-                            <th>이메일</th>
-                            <td>koreait@google.com</td>
-                        </tr>  
-                    </table>
-                </div>
 
                 <div class="menu-container"></div>
                 <h2 class="menu-name">추가 요청 사항</h2>
@@ -87,4 +87,5 @@
         </div>
     </div>
 </body>
+<script src="/static/js/check.js"></script>
 </html>
