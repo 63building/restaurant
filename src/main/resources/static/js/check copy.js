@@ -1,5 +1,5 @@
 window.onload = () => {
-
+	
 }
 
 class CheckApi {
@@ -38,25 +38,7 @@ class CheckService{
 		}
 		return this.#instance;
 	}
-
 	
-
-        // responseData.forEach((data, index) => {
-        //     bookListBody.innerHTML += `
-        //         <tr>
-        //             <td><input type="checkbox" class="delete-checkbox"></td>
-        //             <td class="book-id">${data.bookId}</td>
-        //             <td>${data.bookCode}</td>
-        //             <td>${data.bookName}</td>
-        //             <td>${data.author}</td>
-        //             <td>${data.publisher}</td>
-        //             <td>${data.publicationDate}</td>
-        //             <td>${data.category}</td>
-        //             <td>${data.rentalStatus == "Y" ? "대여중" : "대여가능"}</td>
-        //             <td><a href="/templates/admin/book_modification.html?bookCode=${data.bookCode}"><i class="fa-solid fa-square-pen"></i></a></td>
-        //         </tr>
-        //     `;
-        // });
 
 }
 

@@ -28,7 +28,7 @@ html,body {
 }
 
 
-.home {
+.home-button {
     position: fixed;
     left: 96%;
     bottom: 92%;
@@ -93,7 +93,7 @@ background-color: #dddddd;
     cursor: pointer;
 }
 
-.reservation-search {
+.reserve-search {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,14 +107,14 @@ background-color: #dddddd;
     cursor: pointer;
 }
 
-ul.reservation-search{
+ul.reserve-search{
 	list-style: none;
 
 	margin: 0px;
 	padding: 0px;
 }
 
-.reservation-change {
+.reserve-change {
     display: inline-block;
 
     margin: 1px;
@@ -127,7 +127,7 @@ ul.reservation-search{
     background: #E1EEDD;
 }
 
-.reservation-change:hover {
+.reserve-change:hover {
     background-color: #434242;
     color: white;
 }
@@ -164,12 +164,18 @@ ul.reservation-search{
     font-weight: bold;
 }
 
-.reservation-number {
+.reserve-number {
     font-size: 20px;
 }
 
 .change-name1 {
     font-size: 20px;
+}
+
+.check-error {
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: red;
 }
 
 .input-group {
@@ -192,7 +198,7 @@ ul.reservation-search{
     cursor: pointer;
 }
 
-.reservation-number {
+.reserve-number {
     margin-bottom: 20px;
 }
 
@@ -202,7 +208,7 @@ ul.reservation-search{
     align-items: center;
 }
 
-.reservation-button {
+.reserve-button {
     margin: 0px;
     padding: 0px;
 
@@ -218,7 +224,7 @@ ul.reservation-search{
     cursor: pointer;
 }
 
-.reservation-button:hover {
+.reserve-button:hover {
     background-color: #183a1d;
 }
 
