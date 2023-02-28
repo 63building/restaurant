@@ -1,9 +1,12 @@
+/* 예약일시선택 */
+
 .cal-toolbar {
   display: flex;
   justify-content: center;
 }
 
 .prebBtn,.nextBtn {
+
   border: none;
   margin: 15px;
 
@@ -16,10 +19,9 @@
   justify-content: center;
   padding: 35px 30px 35px;
   box-sizing: border-box;
-  margin-bottom: 20px;
 }
 
-.cal_left{
+.cal_day{
   display: flex;
   width: 512px;
   padding: 20px 50px 20px 50px;
@@ -56,4 +58,36 @@
 
 .sun {
   color: red;
+}
+
+/* 이용시간, 방문시간 */
+
+.hours-container{
+  display: flex;
+  justify-content: center;
+}
+
+ .hours-wrap{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.hours-wrap{
+  font-size: 16px;
+  max-width: 600px;
+  padding: 20px;
+
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+}
+
+.box {
+  margin-left: 30px;
+}
+
+.hours-wrap ,select {
+  font-size: 16px;
+  color: #333;
 }
