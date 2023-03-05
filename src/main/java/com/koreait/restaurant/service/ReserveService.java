@@ -14,14 +14,10 @@ import java.util.Map;
 public class ReserveService {
 
     @Autowired
-    private final ReserveRepository reserveRepository;
+    private ReserveRepository reserveRepository;
 
-    public int getSearchReserveCheck(DinningMst dinningMst) {
-       return reserveRepository.getUserSearchReserveCheck(dinningMst);
-
-    }
     public int userSearchReserve(DinningMst dinningMst) {
-        return reserveRepository.userSearchReserve(dinningMst);
+        return reserveRepository.findUserByReserveId(dinningMst);
 
     }
 

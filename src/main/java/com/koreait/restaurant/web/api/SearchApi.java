@@ -1,32 +1,36 @@
 package com.koreait.restaurant.web.api;
 
+import com.koreait.restaurant.aop.annotation.ParamsAspect;
 import com.koreait.restaurant.aop.annotation.ValidAspect;
 import com.koreait.restaurant.entity.DinningMst;
-import com.koreait.restaurant.service.ReserveService;
 import com.koreait.restaurant.service.SearchService;
 import com.koreait.restaurant.web.dto.CMRespDto;
+import com.koreait.restaurant.web.dto.SearchReserveReqDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.List;
+
 @Slf4j
 @RestController
-@RequestMapping("/api/reserve")
-public class ReserveApi {
+@RequestMapping("/api/search")
+public class SearchApi {
 
     @Autowired
-    private ReserveService reserveService;
+    private SearchService searchService;
 
-
+    @ParamsAspect
     @ValidAspect
-    @PostMapping("/page/{reserveId}")
-    public ResponseEntity<?> getCheckPage(@RequestBody DinningMst dinningMst) {
-
+    @GetMapping("/contents")
+    public ResponseEntity<CMRespDto<List<DinningMst>>> searchReserve(@RequestBody @Valid DinningMst dinningMst) {
         return ResponseEntity
                 .ok()
-                .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", reserveService.userSearchReserve(dinningMst)));
+                .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", searchService.searchReserve(dinningMst)));
+
     }
 
 }

@@ -5,11 +5,9 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface ReserveRepository {
-    public int getUserSearchReserveCheck(DinningMst dinningMst);
 
-    public int userSearchReserve(DinningMst dinningMst);
+    public int findUserByReserveId(DinningMst dinningMst);
 
-    public int saveReserve(DinningMst reserve);
 }
 
 

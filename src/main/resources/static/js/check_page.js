@@ -1,5 +1,8 @@
 window.onload = () => {
 	ComponentEvent.getInstance().addClickEventReserveButton();
+
+	// ReservePageService.getInstance().onLoadCheck();
+	// ReservePageService.getInstance().setReserveData();
 }
 
 $(document).ready(function(){
@@ -22,20 +25,20 @@ const reserveObj = {
 	number: ""
 }
 
-class ReserveInquireApi {
+class ReservePageApi {
 	static #instance = null;
 	static getInstance() {
 		if(this.#instance == null) {
-			this.#instance = new ReserveInquireApi();
+			this.#instance = new ReservePageApi();
 		}
 		return this.#instance();
 	}
 
-	getReserveData() {
+	setCheckPage() {
 		$.ajax({
 			async: false,
 			type: "post",
-			url: "http://localhost:8000/check/page",
+			url: "http://localhost:8000/api/reserve/page/{reserveId}",
 			contentType: "application/json",
 			data: JSON.stringify(),
 			dataType: "json",
@@ -44,117 +47,83 @@ class ReserveInquireApi {
 			},
 			error: error => {
 				console.log(error);
-			console.log("getReserveData");
 			}
 		});
 		return responseData;
 	}
 
-	// loadReserveCheck(reserveId) {
-    //     let responseData = false;
-        
-    //     $.ajax({
-    //         async: false,
-    //         type: "post",
-    //         url: `http://localhost:8000/api/reserve/Page/${reserveId}`,
-    //         dataType: "json",
-    //         success: response => {
-    //             responseData = response.data;
-    //         },
-    //         error: error => {
-    //             console.log(error);
-    //         }
-    //     });
-
-    //     return responseData;
-    // }
-
-	checked() {
-        let responseData = false;
-        
-        $.ajax({
-            async: false,
-            type: "post",
-            url: `http://localhost:8000/api/reserve/check/${reserveId}`,
-            dataType: "json",
-            success: response => {
-                responseData = response.data;
-            },
-            error: error => {
-                console.log(error);
-				console.log("checked");
-            }
-        });
-
-        return responseData;
-    }
+	setReserveCheck() {
+		$.ajax({
+			async: false,
+			type: "post",
+			url: "http://localhost:8000/api/reserve/check",
+			contentType: "application/json",
+			data: JSON.stringify(),
+			dataType: "json",
+			success: response => {
+				responseData = response.data;
+			},
+			error: error => {
+				console.log(error);
+			}
+		});
+		return responseData;
+	}
 }
 
-// class ReserveInquireService {
-// 	static #instance = null;
-// 	static getInstance() {
-// 		if(this.#instance == null) {
-// 			this.#instance = new ReserveInquireService();
-// 		}
-// 		return this.#instance();
-// 	}
+class ReservePageService {
+    static #instance = null;
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new ReservePageService();
+        }
+        return this.#instance;
+    }
 
-// 	setReserveId() {
-// 		const URLInqire = new URLInqireParams(location.search);
+	onLoadCheck() {
+        const URLSearch = new URLSearchParams(location.check);
+        if(URLSearch.has("reserveId")){
+            const reserveId = URLSearch.get("reserveId");
+            if(reserveId == "") {
+                return;
+            }
+            const inputOne = document.querySelector(".input-one");
+            inputOne.value = reserveId;
 
-// 		reserveObj.reserveId = URLInqire.get("reserveId");
+            const reserveButton = document.querySelector(".reserve-button");
+            reserveButton.click();
+        }
+		this.setReserveData();
+		
+    }
 
-// 	}
-
-// 	// setErrorMessage (errors) {
-// 	// 	const checkError = document.querySelectorAll(".check-error");
-	
-// 	// 	this.#clearErrorMessage();
-	
-// 	// 	Object.keys(errors).forEach(error => {
-// 	// 		if (error == "reserveId") {
-// 	// 			checkError[ 0 ].textContent = errors[ error ];
-// 	// 		} else if (error == "number") {
-// 	// 			checkError[ 1 ].textContent = errors[ error ];
-// 	// 		} else if (error == "reserveName") {
-// 	// 			checkError[ 2 ].textContent = errors[ error ];
-// 	// 		} 
-// 	// 	});
-// 	// }
-	
-// 	// #clearErrorMessage() {
-// 	// 	const checkError = document.querySelectorAll(".check-error");
-// 	// 	checkError.forEach(error => {
-// 	// 		error.textContent = "";
-// 	// 	});
-// 	// }
-	
-// // 이거 지금 이벤트에 추가 안했음
-// 	loadReserveDataError() {
-// 		const responseData = ReserveInquireApi.getInstance().loadReserveCheck();
-
-// 		if(responseData.dinningMst == null) {
-// 			alert("등록되지 않은 예약 정보입니다.");
-// 			history.back();
-// 			return;
-// 		}
-
-// 		const inputOne = document.querySelectorAll(".input-one")
-// 		inputOne.values = responseData.dinningMst.reserveId;
-
-// 		const inputTwo = document.querySelectorAll(".input-two")
-// 		inputTwo.values = responseData.dinningMst.reserveName;
-// 		inputTwo.values = responseData.dinningMst.number;
-
-// 		if(responseData.reservePage != null) {
-// 			reserveObj.reserveId = responseData.reservePage.reserveId;
-// 			reserveObj.reserveName = responseData.reservePage.reserveName;
-// 			reserveObj.number = responseData.reservePage.number;
-// 		}
-// 	}
-
-	
-// }
+    setReserveData() {
+		const responseData = ReservePageApi.getInstance().reserveObj();
+		const reserveData = document.querySelector(".reserve-data");
+		reserveData=innerHTML = ``;
+		
+		responseData.forEach((data, index) => {
+			reserveData.innerHTML += `
+				<tr>                       
+					<th>성명(한글)</th>
+					<td>${data.reserveName}</td> 
+				</tr>
+				<tr>                       
+					<th>예약번호</th>
+					<td>${data.reserveId}</td>
+				</tr>
+				<tr>
+					<th>연락처</th>
+					<td>${data.number}</td>
+				</tr>        
+				<tr>
+					<th>이메일</th>
+					<td>${data.email}</td>
+				</tr>  
+			`;
+		});
+	}
+}
 
 class ComponentEvent {
     static #instance = null;
@@ -165,59 +134,43 @@ class ComponentEvent {
         return this.#instance;
     }
 
-
 	addClickEventReserveButton() {
 		const reserveButton = document.querySelector(".reserve-button");
-        const inputOne = document.querySelector(".input-one");
-        const inputTwo = document.querySelector(".input-two");
+		/*var inputResv = document.getElementById("reserve-number1").value;
+		var inputTel = document.getElementById("telephone-name1").value;*/
+
+		var listVar1 = $('#reserve-number1').val();
+		var listVar2 = $('#telephone-name1').val();
+
+		/*const inputOne = document.querySelectorAll("reserve-number1");
+		const inputTwo = document.querySelectorAll("telephone-name1");*/
 
         reserveButton.onclick = () => {
-			console.log("onclick");
-			alert("예약버튼을 클릭하세요.");
-			// const responseData = ReserveInquireApi.getInstance().loadReserveCheck();
-		
-			// const reserveData = document.querySelector(".reserve-data");
+			console.log(listVar1);
+			console.log(listVar2);
 
-			// responseData.forEach((data, index) => {
-			// 	reserveData.innerHTML += `
-			// <tr>                       
-			// 	<th>성명(한글)</th>
-			// 	<td>${data.reserveName}</td> 
-			// </tr>
-			// <tr>                       
-			// 	<th>예약번호</th>
-			// 	<td>${data.reserveId}</td>
-			// </tr>
-			// <tr>
-			// 	<th>연락처</th>
-			// 	<td>${data.number}</td>
-			// </tr>        
-			// <tr>
-			// 	<th>이메일</th>
-			// 	<td>${data.email}</td>
-			// </tr>  
-			// `;
-			// });
+	
 
-			if(inputOne.value == "") {
-				alert("예약번호를 입력해주세요.")
-
+			if(listVar1.value == null) {
 				return false;
+			} else {
+				location.reload();
 			}
-			if(inputTwo.value == "") {
-				alert("전화번호 또는 이름을 입력해주세요.")
-
+			if(listVar2.value == null) {
 				return false;
+			} else {
+				location.reload();
 			}
-			location.href = `http://localhost:8000/check?reserveId=${inputOne.value}`;
-			inputOne.onkeyup = () => {
+
+			location.href = `http://localhost:8000/check?reserveId=${listVar1.value}`;
+			listVar1.onkeyup = () => {
 				if (window.event.keyCode == 13) {
 					reserveButton.click();
 				}
             }
+			ReservePageService.getInstance().onLoadCheck();
+			ReservePageService.getInstance().setReserveData();
         }
-
-		
     }
 
 }
