@@ -1,10 +1,12 @@
 package com.korit.restaurant.web.controller;
 
-import com.korit.restaurant.service.AdminService;
-import com.korit.restaurant.web.dto.AdminDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@CrossOrigin
 
 @Controller
 @RequestMapping("/admin")
@@ -12,12 +14,16 @@ public class AdminController {
 
     @GetMapping("/login")
     public String login() {
-        return "/admin/login";
+        return "/account/login";
     }
 
     @PostMapping("/login/error")
     public String loginError() {
-        return "/admin/login_error";
+        return "/account/login_error";
     }
 
+    @GetMapping("/register")
+    public String register() {
+        return "/account/register";
+    }
 }

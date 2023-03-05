@@ -1,7 +1,7 @@
 window.onload = () => {
-    menuModificationService.getInstance().setmenuCode();
-    menuModificationService.getInstance().loadCategories();
-    menuModificationService.getInstance().loadmenuAndImageData();
+    MenuModificationService.getInstance().setMenuCode();
+    MenuModificationService.getInstance().loadCategories();
+    MenuModificationService.getInstance().loadMenuAndImageData();
 
     ComponentEvent.getInstance().addClickEventModificationButton();
     ComponentEvent.getInstance().addClickEventImgAddButton();
@@ -10,13 +10,15 @@ window.onload = () => {
     ComponentEvent.getInstance().addClickEventImgCancelButton();
 }
 
-const MenuObj = {
+const menuObj = {
     menuCode: "",
     menuName: "",
-    author: "",
-    publisher: "",
-    publicationDate: "",
-    category: ""
+    day: "",
+    meals: "",
+    menuAge1: "",
+    menuAge2: "",
+    salesPride: "",
+    explanation: ""
 }
 
 const imgObj = {
@@ -31,11 +33,11 @@ const fileObj = {
     formData: new FormData()
 }
 
-class MenuCorrectionApi {
+class MenuModificationApi {
     static #instance = null;
     static getInstance() {
         if(this.#instance == null) {
-            this.#instance = new MenuCorrectionApi();
+            this.#instance = new MenuModificationApi();
         }
         return this.#instance;
     }
@@ -46,26 +48,7 @@ class MenuCorrectionApi {
         $.ajax({
             async: false,
             type: "get",
-            url: `http://localhost:8000/api/admin/menu/${MenuObj.MenuCode}`,
-            dataType: "json",
-            success: response => {
-                responseData = response.data;
-            },
-            error: error => {
-                console.log(error);
-            }
-        });
-
-        return responseData;
-    }
-
-    getCategories() {
-        let responseData = null;
-
-        $.ajax({
-            async: false,
-            type: "get",
-            url: "http://localhost:8000/api/admin/categories",
+            url: `http://localhost:8000/api/admin/menu/${menuObj.menuCode}`,
             dataType: "json",
             success: response => {
                 responseData = response.data;
@@ -93,7 +76,7 @@ class MenuCorrectionApi {
             },
             error: error => {
                 console.log(error);
-                MenuCorrectionService.getInstance().setErrors(error.responseJSON.data);
+                MenuModificationService.getInstance().setErrors(error.responseJSON.data);
             }
         });
 
@@ -142,21 +125,21 @@ class MenuCorrectionApi {
 
 }
 
-class menuModificationService {
+class MenuModificationService {
     static #instance = null;
     static getInstance() {
         if(this.#instance == null) {
-            this.#instance = new menuModificationService();
+            this.#instance = new MenuModificationService();
         }
         return this.#instance;
     }
 
-    setmenuCode() {
+    setMenuCode() {
         const URLSearch = new URLSearchParams(location.search);
         menuObj.menuCode = URLSearch.get("menuCode");
     }
 
-    setmenuObjValues() {
+    setMenuObjValues() {
         const modificationInputs = document.querySelectorAll(".modification-input");
 
         menuObj.menuCode = modificationInputs[0].value;
@@ -167,11 +150,11 @@ class menuModificationService {
         menuObj.category = modificationInputs[5].value;
     }
 
-    loadmenuAndImageData() {
-        const responseData = menuModificationApi.getInstance().getmenuAndImage();
+    loadMenuAndImageData() {
+        const responseData = MenuModificationApi.getInstance().getMenuAndImage();
 
         if(responseData.menuMst == null) {
-            alert("해당 메뉴코드는 등록되지 않은 코드입니다.");
+            alert("해당 도서코드는 등록되지 않은 코드입니다.");
             history.back();
             return;
         }
@@ -196,7 +179,7 @@ class menuModificationService {
     }
 
     loadCategories() {
-        const responseData = menuModificationApi.getInstance().getCategories();
+        const responseData = MenuModificationApi.getInstance().getCategories();
 
         const categorySelect = document.querySelector(".category-select");
         categorySelect.innerHTML = `<option value="">전체조회</option>`;
@@ -269,16 +252,16 @@ class ComponentEvent {
         const modificationButton = document.querySelector(".modification-button");
 
         modificationButton.onclick = () => {
-            menuModificationService.getInstance().setmenuObjValues();
-            const successFlag = menuModificationApi.getInstance().modifymenu();
+            MenuModificationService.getInstance().setMenuObjValues();
+            const successFlag = MenuModificationApi.getInstance().modifyMenu();
             
             if(!successFlag) {
                 return;
             }
 
-            menuModificationService.getInstance().clearErrors();
+            MenuModificationService.getInstance().clearErrors();
 
-            if(confirm("메뉴 이미지를 수정하시겠습니까?")) {
+            if(confirm("도서 이미지를 수정하시겠습니까?")) {
                 const imgAddButton = document.querySelector(".img-add-button");
                 const imgCancelButton = document.querySelector(".img-cancel-button");
     
@@ -338,11 +321,11 @@ class ComponentEvent {
             let successFlag = true;
 
             if(imgObj.imageId != null) {
-                successFlag = menuModificationApi.getInstance().removeImg();
+                successFlag = MenuModificationApi.getInstance().removeImg();
             }
 
             if(successFlag) {
-                menuModificationApi.getInstance().registerImg();
+                MenuModificationApi.getInstance().registerImg();
             }
             
         }
