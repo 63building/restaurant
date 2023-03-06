@@ -30,7 +30,7 @@ class resvRegisterApi{
     $.ajax({
       async : false,
       type : "post",
-      URL : "http://localhost:8000/api/admin/resv",
+      URL : "http://localhost:8000/api/resv",
       contentType : "application/json",
       data : JSON.stringify(resvObj),
       dataType : "json",
@@ -61,7 +61,7 @@ class resvRegisterService {
   setResvObjValue(){
     const registerInputs = document.querySelectorAll(".register-input"); //예약정보
     const registerInput_nm = document.querySelectorAll(".cust_nm"); //인원수
-    const registerInput_cus = document.querySelectorAll(".num"); // 대인.소인
+    ment.querySelectorAll(".num"); // 대인.소인
 
     var mobile1 =  $('option[name="mobile1"]:checked').val();
     var mobile2 = document.querySelectorAll(".mobile2").value;

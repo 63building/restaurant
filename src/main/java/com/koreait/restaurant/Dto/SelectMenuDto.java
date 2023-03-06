@@ -1,0 +1,15 @@
+package com.koreait.restaurant.Dto;
+
+import lombok.Data;
+
+@Data
+public class SelectMenuDto {
+
+    private int menuCode;
+    private String menuName;
+    private String day;
+    private String meals;
+    private int adultPrice;
+    private int childPrice;
+
+}
