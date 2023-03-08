@@ -4,20 +4,17 @@
     flex-direction: column;
 }
 
-.brunch_course{
+.course-title {
+    padding: 1px;
+    padding-left: 42%;
+    margin: 10px;
+    font-size: 40px;
 
-    display:table;
-}
-
-.dinner_course{
+    vertical-align: middle;
+    justify-content: center;
     
-    display:table;
 }
 
-.menu-name, .menu-code {
-    font-size: 25px;
-    color: black;
-}
 
 .info-text menu-age1 {
     font-size: 20px;
@@ -26,73 +23,109 @@
 
 .img-container {
     display: flex;
+    position: relative;
+
+    padding-left: 150px;
+    padding-top: 50px;
+
 
     margin: 1px;
-    margin-left: 30px;
+    /* margin-left: 100px; */
 }
 
 .menu-img {
     border: 1px solid black;
 
     width: 700px;
-    height: 400px;
-
-    
+    height: 500px;    
 }
 .menu-button1 {
-    position: absolute;
-    top: 69%;
-    left: 34%;
+    border: 2px solid #E1EEDD;
+    display: flex;
 
-    width: auto;
-    padding: 8px; 
+    justify-content: center;
+    align-items: center;
 
     font-size: 15px;
 }
 
 .menu-button2 {
-    position: absolute;
-    top: 69%;
-    left: 84%;
+    border: 2px solid #E1EEDD;
+    display: flex;
 
-    width: auto;
-    padding: 8px; 
-
+    justify-content: center;
+    align-items: center;
+    
     font-size: 15px;
 }
-
 .menu-button3 {
-    position: absolute;
-    top: 84%;
-    left: 34%;
+    border: 2px solid #E1EEDD;
+    display: flex;
 
-    width: auto;
-    padding: 8px; 
-
+    justify-content: center;
+    align-items: center;
+    
     font-size: 15px;
 }
-
 .menu-button4 {
-    position: absolute;
-    top: 84%;
-    left: 80%;
+    border: 2px solid #E1EEDD;
+    display: flex;
 
-    width: auto;
-    padding: 8px; 
-
+    justify-content: center;
+    align-items: center;
+    
     font-size: 15px;
 }
+
+.menu-button5 {
+    border: 2px solid #E1EEDD;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 15px;
+}
+.menu-button6 {
+    border: 2px solid #E1EEDD;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 15px;
+}
+.menu-button7 {
+    border: 2px solid #E1EEDD;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 15px;
+}
+
+.menu-button8 {
+    border: 2px solid #E1EEDD;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 15px;
+}
+
+
+
 
 .button-container{
     display: flex;
     position: fixed;
-    width: 100vw;
-    /* height: 70vh; */
-    justify-content: center;
-    /* align-items: end; */
 
+    width: 100vw;
+
+    justify-content: center;
     bottom: 0px;
-    transform: translatY(-100%);
 
 }
 
@@ -124,7 +157,7 @@ html, body{width: 100%; height: 100%;}
  
 .content{
 	width: 100%; height: 100%;
-	background-color: blueviolet;
+	background-color: white;
 	
 	position: relative;
 }
@@ -138,4 +171,40 @@ html, body{width: 100%; height: 100%;}
 	text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
  
 }
-.content:nth-child(even){background-color: #333;}
+
+.detail {
+    border: 1px solid black;
+    background-color: whitesmoke;
+
+    width: 75%;
+    height: 90%;
+    position: absolute;
+
+}
+
+.detail-title {
+    padding: 0px 25%;
+
+    font-size: 30px;
+    font-weight: 5px;
+}
+.umenu {
+    padding-left: 30px;
+    padding-top: 15px;
+    height: 50px;
+
+    font-size: 25px;
+}
+
+
+.detail1, .detail3, .detail4,.detail5, .detail6, .detail7, .detail8 {
+    border: 1px solid black;
+    background-color: whitesmoke;
+
+    width: 75%;
+    height: 90%;
+    position: absolute;
+}
+
+
+
