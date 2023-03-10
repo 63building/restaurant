@@ -86,23 +86,6 @@ class resvRegisterService {
 
   }
 
-  setErrors(errors){//필수작성란
-    const errorMessages = document.querySelectorAll(".error-message");
-    this.clearErrors();
-
-    Object.keys(errors).forEach(key=>{
-      if(key == "customerName"){
-        errorMessages[0].innerHTML= errors[key];
-      }else if(key=="resvDate"){
-        errorMessages[1].innerHTML= errors[key];
-      }else if(key=="number"){
-        errorMessages[3].innerHTML= errors[key];
-      }else if(key=="email"){
-        errorMessages[4].innerHTML= errors[key];
-      }
-    })
-  }
-
   clearErrors(){
     const errorMessages = document.querySelectorAll(".error-message");
     errorMessages.forEach(error => {

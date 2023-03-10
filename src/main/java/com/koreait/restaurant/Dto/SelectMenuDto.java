@@ -2,9 +2,11 @@ package com.koreait.restaurant.Dto;
 
 import lombok.Data;
 
-@Data
-public class SelectMenuDto {
+import java.util.List;
 
+@Data
+//
+public class SelectMenuDto {
     private int menuCode;
     private String menuName;
     private String day;

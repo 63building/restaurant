@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/admin")
 public class AdminLoginController {
 
+    @Autowired
+    AdminLoginService adminLoginService;
+
     @GetMapping("/index")
     public String adminHome() {
         return "admin/admin_home";

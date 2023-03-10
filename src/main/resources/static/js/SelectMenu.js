@@ -1,16 +1,5 @@
 window.onload = () =>{
-
-    SearchService.getInstance().loadSearchBooks();
-}
-
-const MenuObj = {
-    menuID: "",
-    menuName: "",
-    day: "",
-    meals: "",
-
-    adultPrice: "",
-    childPrice: ""
+    SelectComponent.getInstance().addClickEventResvSelect();
 }
 
 class SearchApi {
@@ -22,15 +11,16 @@ class SearchApi {
         return this.#instance;
     }
 
-    searchBook() {
+    searchMenu() {
         let responseData = null;
 
         $.ajax({
             async: false,
             type: "get",
             url: "http://127.0.0.1:8000/api/search",
-            data: MenuObj,
-            dataType: "json",
+            data: menuObj, //day(평일,주말) && meals(점심,저녁)
+            // date가 없어지니까 성공됨... 왜지..? -> 값을 가져와야하는데 쓸데없이 값을 전달해서
+            dataType: 'json',
             success: response => {
                 responseData = response.data;
             },
@@ -41,6 +31,26 @@ class SearchApi {
 
         return responseData;
     }
+
+    getCategories() {
+      let returnData = null;
+
+      $.ajax({
+          async: false,
+          type: "get",
+          url: "http://localhost:8000/api/select",
+          dataType: "json",
+          success: response => {
+              console.log(response);
+              returnData = response.data;
+          },
+          error: error => {
+              console.log(error);
+          }
+      });
+
+      return returnData;
+  }
 
 }
 
@@ -53,24 +63,29 @@ class SearchService {
         return this.#instance;
     }
 
+    loadCategories(){
+      const categoryList = document.querySelector(".categoriy-list");
+    }
 
-    loadSearchBooks() {
-        const responseData = SearchApi.getInstance().searchBook();
+    loadMenuList() {
+        const responseData = SearchApi.getInstance().searchMenu();
         const contentFlex = document.querySelector(".resv_menu_test");
 
-        responseData.forEach((data) => {
-            contentFlex.innerHTML += `
+        console.log(responseData);
+
+        responseData.forEach(data => {
+            contentFlex.innerHTML = `
             <div class="menu_select">
               <input
                 type="radio"
-                id="주중 점심 A"
+                id="${data.day}${data.meals}"
+                class="ckbCheck"
                 name="ckbCheck"
-                value="1000"
-                title="주중 점심 A"
-                onclick="funcAddMenuChecked(); funcCheckSum()"
+                value="${data.adultPrice}"
+                
               />
     
-              <label class="la_check" for="input_add_product0">${data.day}+${data.meals}</label>
+              <label class="la_check" for="${data.day}${data.meals}">${data.day}${data.meals}</label>
               <span class="img">
                 <img
                   width="180"
@@ -105,6 +120,56 @@ class SearchService {
               </div>
             </div>
             `;
-        })
+        })       
     }
+
+    checkMenuPrice(){
+      const responseData = SearchApi.getInstance().searchMenu();
+      var count_adult = document.getElementById("count01").innerText;
+      var count_child = document.getElementById("count02").innerText;
+      const PriceSum = document.getElementById("")
+
+      console.log(count_adult);
+      console.log(count_child);
+
+      responseData.forEach(data => {
+      
+        var adultCheckPrice = Number(data.adultPrice);
+        var childCheckPrice = Number(data.childPrice);
+
+        var adultPrice = Number(count_adult);
+        var childPrice = Number(count_child);
+
+        var checkSumAdult = adultCheckPrice * adultPrice;
+        var checkSumChild = childCheckPrice * childPrice;
+        
+        console.log(checkSumAdult);
+        console.log(checkSumChild);
+
+
+
+      });
+      
+    }
+
+
+}
+
+class SelectComponent{
+  static #instance = null;
+  static getInstance(){
+    if(this.#instance == null){
+      this.#instance = new SelectComponent();
+    }
+    return this.#instance;
+  }
+
+  addClickEventResvSelect() {
+    const resvTimeButton = document.querySelector(".resvTimeButton");
+
+    resvTimeButton.onclick = () => {
+      SearchService.getInstance().loadMenuList();
+      SearchService.getInstance().checkMenuPrice();
+    }
+  }
 }

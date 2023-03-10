@@ -5,12 +5,35 @@
 
 <!--메뉴가져오기-->
 <mapper namespace="com.koreait.restaurant.repository.SelectRepository">
-    <select id="userSelectBook"
+
+<!--    <select id="userSelectMenu"-->
+<!--            resultType="com.koreait.restaurant.entity.SelectMenuEntity">-->
+<!--        select-->
+<!--            code,-->
+<!--            name,-->
+<!--            day,-->
+<!--            meals,-->
+<!--            age1,-->
+<!--            age2-->
+<!--        from-->
+<!--            admin_menu-->
+<!--    </select>-->
+
+    <select id="userSelectMenu"
             parameterType="com.koreait.restaurant.Dto.SelectMenuDto"
             resultType="com.koreait.restaurant.entity.SelectMenuEntity">
         select
-            *
+        code as menuCode,
+        name as menuName,
+        day,
+        meals,
+        age1 as adultPrice,
+        age2 as childPrice
         from
-            admin_menu
+        admin_menu
+
+        where
+        day = #{day}
+        and meals = #{meals}
     </select>
 </mapper>

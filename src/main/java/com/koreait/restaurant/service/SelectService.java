@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 @RequiredArgsConstructor
 public class SelectService {
@@ -15,6 +16,7 @@ public class SelectService {
 
     public List<SelectMenuEntity> getMenu(SelectMenuDto selectMenuDto) {
 
-        return searchRepository.userSelectBook(selectMenuDto);
+
+        return searchRepository.userSelectMenu(selectMenuDto);
     }
 }

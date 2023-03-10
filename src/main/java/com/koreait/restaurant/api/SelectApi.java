@@ -2,6 +2,7 @@ package com.koreait.restaurant.api;
 
 import com.koreait.restaurant.Dto.CMRespDto;
 import com.koreait.restaurant.Dto.SelectMenuDto;
+import com.koreait.restaurant.entity.SelectMenuEntity;
 import com.koreait.restaurant.service.SelectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class SelectApi {
 
     @GetMapping("/search")
     public ResponseEntity<CMRespDto<?>> search(SelectMenuDto selectMenuDto) {
-
+//        System.out.println(selectService.getMenu(selectMenuEntity));
         return ResponseEntity.ok()
                 .body(new CMRespDto<>(HttpStatus.OK.value(),
                         "Successfully",
