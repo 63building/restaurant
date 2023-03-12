@@ -6,7 +6,7 @@
 <mapper namespace="com.korit.restaurant.repository.SearchReservationRepository">
 
     <select id="getAdminSearchReservationTotalCount"
-            parameterType="com.korit.restaurant.web.dto.SearchSReqDto"
+            parameterType="com.korit.restaurant.web.dto.SearchReservationReqDto"
             resultType="Integer">
         select
             count(*)
@@ -22,7 +22,7 @@
     </select>
 
     <select id="adminSearchReservation"
-            parameterType="com.korit.restaurant.web.dto.SearchSReqDto"
+            parameterType="com.korit.restaurant.web.dto.SearchReservationReqDto"
             resultType="com.korit.restaurant.entity.admin.SearchReservationMst">
         select
             reserve_id as reserveId,

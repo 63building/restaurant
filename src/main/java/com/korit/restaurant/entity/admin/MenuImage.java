@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class MenuImage {
     private int imageId;
-    private int menuCode;
+    private String menuCode;
     private String saveName;
     private String originName;
 }

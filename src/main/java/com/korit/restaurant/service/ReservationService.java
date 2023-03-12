@@ -20,7 +20,7 @@ public class ReservationService {
 
     public Map<String, Object> getReservation(String reserveName) {
         Map<String, Object> result = new HashMap<>();
-        result.put("bookMst", reservationRepository.findReserveByReserveName(reserveName));
+        result.put("reservationMst", reservationRepository.findReserveByReserveName(reserveName));
 
         return result;
     }

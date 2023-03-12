@@ -1,6 +1,4 @@
 window.onload = () => {
-    MenuRegisterService.getInstance().loadCategories();
-
     ComponentEvent.getInstance().addClickEventRegisterButton();
     ComponentEvent.getInstance().addClickEventImgAddButton();
     ComponentEvent.getInstance().addChangeEventImgFile();
@@ -121,6 +119,8 @@ class MenuRegisterService {
                 errorMessages[5].innerHTML = errors[key];
             }else if(key == "salesPride") {
                 errorMessages[6].innerHTML = errors[key];
+            }else if(key == "explanation") {
+                errorMessages[7].innerHTML = errors[key];
             }
         })
     }

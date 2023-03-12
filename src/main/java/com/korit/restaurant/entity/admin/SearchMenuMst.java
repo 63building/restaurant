@@ -17,5 +17,6 @@ public class SearchMenuMst {
     private String menuAge2;
     private String salesPride;
     private String explanation;
+    private String saveName;
 
 }

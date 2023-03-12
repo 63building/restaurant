@@ -30,7 +30,7 @@
             meals,
             menu_age1 as menuAge1,
             menu_age2 as menuAge2,
-            sales-pride as salesPride,
+            sales_pride as salesPride,
             explanation
         from
             admin_menu
@@ -41,12 +41,8 @@
             am.menu_name like CONCAT('%', #{searchValue}, '%')
             )
         </if>
-
         order by
-        <choose>
-            <when test='order == "menuName"'>menu_name,</when>
-        </choose>
-        menu_id
+            menuId
         <if test='limit == "Y"'>
             limit #{index}, #{count}
         </if>
@@ -61,7 +57,7 @@
             meals,
             menu_age1 as menuAge1,
             menu_age2 as menuAge2,
-            sales-pride as salesPride,
+            sales_pride as salesPride,
             explanation
         from
             admin_menu
@@ -80,9 +76,10 @@
         set
             menu_name = #{menuName},
             day = #{day},
+            meals = #{meals},
             menu_age1 = #{menuAge1},
             menu_age2 = #{menuAge2},
-            sales = #{salesPride},
+            sales_pride = #{salesPride},
             explanation = if(#{explanation} = '', null, #{explanation})
         where
             menu_code = #{menuCode}
@@ -91,12 +88,13 @@
     <update id="maintainUpdateMenuByMenuCode" parameterType="com.korit.restaurant.web.dto.MenuReqDto">
         update admin_menu
         set
-        menu_name = #{menuName},
-        day = #{day},
-        menu_age1 = #{menuAge1},
-        menu_age2 = #{menuAge2},
-        sales = #{salesPride},
-        <if test='explanation != null'>explanation = #{explanation},</if>
+            menu_name = #{menuName},
+            day = #{day},
+            meals = #{meals},
+            menu_age1 = #{menuAge1},
+            menu_age2 = #{menuAge2},
+            sales_pride = #{salesPride},
+            <if test='explanation != null'>explanation = #{explanation},</if>
         where
             menu_code = #{menuCode}
     </update>
@@ -145,10 +143,10 @@
 
     <select id="findMenuImageByMenuCode" resultType="com.korit.restaurant.entity.admin.MenuImage">
         select
-        image_id as imageId,
-        menu_code as menuCode,
-        save_name as saveName,
-        origin_name as originName
+            image_id as imageId,
+            menu_code as menuCode,
+            save_name as saveName,
+            origin_name as originName
         from
             menu_image
         where

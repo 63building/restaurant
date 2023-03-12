@@ -42,9 +42,9 @@ public class MenuService {
     }
 
 
-    public List<MenuMst> searchMenu(@Valid SearchReqDto searchSReqDto) {
-        searchSReqDto.setIndex();
-        return menuRepository.searchMenu(searchSReqDto);
+    public List<MenuMst> searchMenu(@Valid SearchReqDto searchReqDto) {
+        searchReqDto.setIndex();
+        return menuRepository.searchMenu(searchReqDto);
     }
 
     public void registerMenu(MenuReqDto menuReqDto) {
@@ -74,7 +74,7 @@ public class MenuService {
         menuRepository.deleteMenu(menuCode);
     }
 
-    public void registerMenuImages(int menuCode, List<MultipartFile> files) {
+    public void registerMenuImages(String menuCode, List<MultipartFile> files) {
         if(files.size() < 1) {
             Map<String, String> errorMap = new HashMap<String, String>();
             errorMap.put("files", "이미지를 선택하세요.");

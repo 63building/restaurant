@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class ReservationMst {
 
-    @ApiModelProperty(hidden = true)
+    @ApiModelProperty
     private int reserveId;
 
     @ApiModelProperty(value = "예약자", example = "김민지", required = true)

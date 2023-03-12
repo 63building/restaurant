@@ -1,7 +1,13 @@
 package com.korit.restaurant.entity.admin;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class MenuMst {
 
     @ApiModelProperty(hidden = true)

@@ -21,7 +21,7 @@ import java.util.Map;
 @Api(tags = {"관리자 메뉴관리 API"})
 @RequestMapping("/api/admin")
 @RestController
-//@CrossOrigin(origins = "http://localhost:5500")
+@CrossOrigin(origins = "http://localhost:5500")
 public class MenuApi {
 
     @Autowired
@@ -36,15 +36,14 @@ public class MenuApi {
     }
 
     @ParamsAspect
-    @ValidAspect
     @GetMapping("/menus")
-    public ResponseEntity<CMRespDto<List<MenuMst>>> searchMenu(@Valid SearchReqDto searchReqDto, BindingResult bindingResult) {
+    public ResponseEntity<CMRespDto<List<MenuMst>>> searchMenu(SearchReqDto searchReqDto) {
         return ResponseEntity
                 .ok()
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", menuService.searchMenu(searchReqDto)));
     }
 
-    @GetMapping("/menus/totalcount")
+    @PostMapping("/menus/totalcount")
     public ResponseEntity<CMRespDto<?>> getMenuTotalCount(SearchNumberListReqDto searchNumberListReqDto) {
         return ResponseEntity
                 .ok()
@@ -74,8 +73,9 @@ public class MenuApi {
     @ParamsAspect
     @ValidAspect
     @PatchMapping("/menu/{menuCode}")
-    public ResponseEntity<CMRespDto<?>> maintainModifyBook(@PathVariable String bookCode, @Valid @RequestBody MenuReqDto menuReqDto, BindingResult bindingResult) {
+    public ResponseEntity<CMRespDto<?>> maintainModifyMenu(@PathVariable String menuCode, @Valid @RequestBody MenuReqDto menuReqDto, BindingResult bindingResult) {
         menuService.maintainModifyMenu(menuReqDto);
+
 
         return ResponseEntity
                 .ok()
@@ -94,7 +94,7 @@ public class MenuApi {
     @ParamsAspect
     @PostMapping("/menu/{menuCode}/images")
     public ResponseEntity<CMRespDto<?>> registerMenuImg(@PathVariable String menuCode, @RequestPart List<MultipartFile> files) {
-        menuService.registerMenuImages(Integer.parseInt(menuCode), files);
+        menuService.registerMenuImages(menuCode, files);
         return ResponseEntity.ok()
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", true));
     }
@@ -102,7 +102,7 @@ public class MenuApi {
     @ParamsAspect
     @PostMapping("/menu/{menuCode}/images/modification")
     public ResponseEntity<CMRespDto<?>> modifyMenuImg(@PathVariable String menuCode, @RequestPart List<MultipartFile> files) {
-        menuService.registerMenuImages(Integer.parseInt(menuCode), files);
+        menuService.registerMenuImages(menuCode, files);
         return ResponseEntity.ok()
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", true));
     }
@@ -126,6 +126,5 @@ public class MenuApi {
                 .ok()
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully" ,null));
     }
-
 
 }

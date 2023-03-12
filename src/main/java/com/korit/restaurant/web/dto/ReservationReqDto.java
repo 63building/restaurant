@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class ReservationReqDto {
 
-    @NotBlank
+    @ApiModelProperty
     public int reserveId;
 
     @ApiModelProperty(value = "예약자", example = "김민지", required = true)

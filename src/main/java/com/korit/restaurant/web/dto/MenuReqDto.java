@@ -9,32 +9,25 @@ import java.time.LocalDate;
 
 @Data
 public class MenuReqDto {
-    @ApiModelProperty(value = "도서코드", example = "소록-999", required = true)
-    @NotBlank
+    @ApiModelProperty(value = "도서코드", example = "메뉴-999", required = true)
     private String menuCode;
 
-    @ApiModelProperty(value = "도서명", example = "테스트 도서명", required = true)
-    @NotBlank
+    @ApiModelProperty(value = "메뉴명", example = "테이스티", required = true)
     private String menuName;
 
-    @ApiModelProperty(value = "저자", example = "테스터")
-    @NotBlank
+    @ApiModelProperty(value = "요일", example = "평일")
     private String day;
 
-    @ApiModelProperty(value = "출판사", example = "테스트 출판사")
-    @NotBlank
+    @ApiModelProperty(value = "식사시간", example = "석식")
     private String meals;
 
-    @ApiModelProperty(value = "출판일", example = "2023-01-01")
-    @NotBlank
+    @ApiModelProperty(value = "대인 가격", example = "20000")
     private int menuAge1;
 
-    @ApiModelProperty(value = "출판일", example = "2023-01-01")
-    @NotBlank
+    @ApiModelProperty(value = "소인 가격", example = "200000")
     private int menuAge2;
 
-    @ApiModelProperty(value = "카테고리", example = "가정/생활", required = true)
-    @NotBlank
+    @ApiModelProperty(value = "상시/한정", example = "상시")
     private String salesPride;
 
     @ApiModelProperty(value = "설명", example = "", required = true)

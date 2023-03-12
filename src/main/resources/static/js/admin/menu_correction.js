@@ -1,6 +1,5 @@
 window.onload = () => {
     MenuModificationService.getInstance().setMenuCode();
-    MenuModificationService.getInstance().loadCategories();
     MenuModificationService.getInstance().loadMenuAndImageData();
 
     ComponentEvent.getInstance().addClickEventModificationButton();
@@ -72,6 +71,7 @@ class MenuModificationApi {
             data: JSON.stringify(menuObj),
             dataType: "json",
             success: response => {
+                console.log(response);
                 successFlag = true;
             },
             error: error => {
@@ -114,6 +114,7 @@ class MenuModificationApi {
             data: fileObj.formData,
             dataType: "json",
             success: response => {
+                console.log(response);
                 alert("메뉴 이미지 수정 완료.");
                 location.reload();
             },
@@ -144,17 +145,18 @@ class MenuModificationService {
 
         menuObj.menuCode = modificationInputs[0].value;
         menuObj.menuName = modificationInputs[1].value;
-        menuObj.author = modificationInputs[2].value;
-        menuObj.publisher = modificationInputs[3].value;
-        menuObj.publicationDate = modificationInputs[4].value;
-        menuObj.category = modificationInputs[5].value;
+        menuObj.day = modificationInputs[2].value;
+        menuObj.meals = modificationInputs[3].value;
+        menuObj.menuAge1 = modificationInputs[4].value;
+        menuObj.menuAge2 = modificationInputs[5].value;
+        menuObj.explanation = modificationInputs[7].value;
     }
 
     loadMenuAndImageData() {
         const responseData = MenuModificationApi.getInstance().getMenuAndImage();
 
         if(responseData.menuMst == null) {
-            alert("해당 도서코드는 등록되지 않은 코드입니다.");
+            alert("해당 메뉴코드는 등록되지 않은 코드입니다.");
             history.back();
             return;
         }
@@ -162,10 +164,11 @@ class MenuModificationService {
         const modificationInputs = document.querySelectorAll(".modification-input");
         modificationInputs[0].value = responseData.menuMst.menuCode;
         modificationInputs[1].value = responseData.menuMst.menuName;
-        modificationInputs[2].value = responseData.menuMst.author;
-        modificationInputs[3].value = responseData.menuMst.publisher;
-        modificationInputs[4].value = responseData.menuMst.publicationDate;
-        modificationInputs[5].value = responseData.menuMst.category;
+        modificationInputs[2].value = responseData.menuMst.day;
+        modificationInputs[3].value = responseData.menuMst.meals;
+        modificationInputs[4].value = responseData.menuMst.menuAge1;
+        modificationInputs[5].value = responseData.menuMst.menuAge2;
+        modificationInputs[7].value = responseData.menuMst.explanation;
 
         if(responseData.menuImage != null){
             imgObj.imageId = responseData.menuImage.imageId;
@@ -178,19 +181,6 @@ class MenuModificationService {
         }
     }
 
-    loadCategories() {
-        const responseData = MenuModificationApi.getInstance().getCategories();
-
-        const categorySelect = document.querySelector(".category-select");
-        categorySelect.innerHTML = `<option value="">전체조회</option>`;
-
-        responseData.forEach(data => {
-            categorySelect.innerHTML += `
-                <option value="${data.category}">${data.category}</option>
-            `;
-        });
-    }
-
     setErrors(errors) {
         const errorMessages = document.querySelectorAll(".error-message");
         this.clearErrors();
@@ -200,8 +190,6 @@ class MenuModificationService {
                 errorMessages[0].innerHTML = errors[key];
             }else if(key == "menuName") {
                 errorMessages[1].innerHTML = errors[key];
-            }else if(key == "category") {
-                errorMessages[5].innerHTML = errors[key];
             }
         })
     }
@@ -261,7 +249,7 @@ class ComponentEvent {
 
             MenuModificationService.getInstance().clearErrors();
 
-            if(confirm("도서 이미지를 수정하시겠습니까?")) {
+            if(confirm("메뉴 이미지를 수정하시겠습니까?")) {
                 const imgAddButton = document.querySelector(".img-add-button");
                 const imgCancelButton = document.querySelector(".img-cancel-button");
     
