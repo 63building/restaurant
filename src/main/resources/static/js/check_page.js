@@ -1,8 +1,6 @@
-window.onload = () => {
-	ComponentEvent.getInstance().addClickEventReserveButton();
-
-	// ReservePageService.getInstance().onLoadCheck();
-	// ReservePageService.getInstance().setReserveData();
+window.onclick = () => {
+    ComponentEvent.getInstance().addClickEventReserveButton1();
+    ComponentEvent.getInstance().addClickEventReserveButton2();
 }
 
 $(document).ready(function(){
@@ -19,12 +17,6 @@ $(document).ready(function(){
 
 });
 
-const reserveObj = {
-	reserveId: "",
-	reserveName: "",
-	number: ""
-}
-
 class ReservePageApi {
 	static #instance = null;
 	static getInstance() {
@@ -34,95 +26,26 @@ class ReservePageApi {
 		return this.#instance();
 	}
 
-	setCheckPage() {
-		$.ajax({
-			async: false,
-			type: "post",
-			url: "http://localhost:8000/api/reserve/page/{reserveId}",
-			contentType: "application/json",
-			data: JSON.stringify(),
-			dataType: "json",
-			success: response => {
-				responseData = response.data;
-			},
-			error: error => {
-				console.log(error);
-			}
-		});
-		return responseData;
-	}
-
-	setReserveCheck() {
-		$.ajax({
-			async: false,
-			type: "post",
-			url: "http://localhost:8000/api/reserve/check",
-			contentType: "application/json",
-			data: JSON.stringify(),
-			dataType: "json",
-			success: response => {
-				responseData = response.data;
-			},
-			error: error => {
-				console.log(error);
-			}
-		});
-		return responseData;
-	}
-}
-
-class ReservePageService {
-    static #instance = null;
-    static getInstance() {
-        if(this.#instance == null) {
-            this.#instance = new ReservePageService();
-        }
-        return this.#instance;
-    }
-
-	onLoadCheck() {
-        const URLSearch = new URLSearchParams(location.check);
-        if(URLSearch.has("reserveId")){
-            const reserveId = URLSearch.get("reserveId");
-            if(reserveId == "") {
-                return;
+    
+    check(checkReserve) {
+        $.ajax({
+            async: false,
+            type: "post",
+            url: "http://localhost:8000/api/reserve/search/{reserveId}",
+            contentType: "application/json",
+            data: JSON.stringify(checkReserve),
+            dataType: "json",
+            success: response => {
+                responseData = response.data;
+                alert(responseData);
+            },
+            error: error => {
+                console.log(error);
+                alert(error);
             }
-            const inputOne = document.querySelector(".input-one");
-            inputOne.value = reserveId;
-
-            const reserveButton = document.querySelector(".reserve-button");
-            reserveButton.click();
-        }
-		this.setReserveData();
-		
+        });
+        return responseData;
     }
-
-    setReserveData() {
-		const responseData = ReservePageApi.getInstance().reserveObj();
-		const reserveData = document.querySelector(".reserve-data");
-		reserveData=innerHTML = ``;
-		
-		responseData.forEach((data, index) => {
-			reserveData.innerHTML += `
-				<tr>                       
-					<th>성명(한글)</th>
-					<td>${data.reserveName}</td> 
-				</tr>
-				<tr>                       
-					<th>예약번호</th>
-					<td>${data.reserveId}</td>
-				</tr>
-				<tr>
-					<th>연락처</th>
-					<td>${data.number}</td>
-				</tr>        
-				<tr>
-					<th>이메일</th>
-					<td>${data.email}</td>
-				</tr>  
-			`;
-		});
-	}
 }
 
 class ComponentEvent {
@@ -133,45 +56,53 @@ class ComponentEvent {
         }
         return this.#instance;
     }
+    // tab-1, tab-2 div id로 하는 방법이 있을건데... 연구해야함ㅎㅎ
+    addClickEventReserveButton1() {
+        const reserveButton1 = document.querySelector(".reserve-button1");
 
-	addClickEventReserveButton() {
-		const reserveButton = document.querySelector(".reserve-button");
-		/*var inputResv = document.getElementById("reserve-number1").value;
-		var inputTel = document.getElementById("telephone-name1").value;*/
+        reserveButton1.onclick = () => {
+            const reserveIdValue1 = document.querySelectorAll(".input-contents")[0].value;
+            const numberValue = document.querySelectorAll(".input-contents")[1].value;
+            const reserveIdValue2 = document.querySelectorAll(".input-contents")[2].value;
+            const reserveNameValue = document.querySelectorAll(".input-contents")[3].value;
+       
+            const checkReserve = new CheckReserve(reserveIdValue1, numberValue, reserveIdValue2, reserveNameValue);
 
-		var listVar1 = $('#reserve-number1').val();
-		var listVar2 = $('#telephone-name1').val();
-
-		/*const inputOne = document.querySelectorAll("reserve-number1");
-		const inputTwo = document.querySelectorAll("telephone-name1");*/
-
-        reserveButton.onclick = () => {
-			console.log(listVar1);
-			console.log(listVar2);
-
-	
-
-			if(listVar1.value == null) {
-				return false;
-			} else {
-				location.reload();
-			}
-			if(listVar2.value == null) {
-				return false;
-			} else {
-				location.reload();
-			}
-
-			location.href = `http://localhost:8000/check?reserveId=${listVar1.value}`;
-			listVar1.onkeyup = () => {
-				if (window.event.keyCode == 13) {
-					reserveButton.click();
-				}
-            }
-			ReservePageService.getInstance().onLoadCheck();
-			ReservePageService.getInstance().setReserveData();
+            if(reserveIdValue1 && numberValue !=  null) {
+                location.href = `http://localhost:8000/check?reserveId=${reserveIdValue1}&number=${numberValue}`;
+            } 
+           
+            ReservePageApi.getInstance().getReserveNumberPage(checkReserve);
         }
     }
 
+    addClickEventReserveButton2() {
+        const reserveButton2 = document.querySelector(".reserve-button2");
+
+        reserveButton2.onclick = () => {
+            const reserveIdValue1 = document.querySelectorAll(".input-contents")[0].value;
+            const numberValue = document.querySelectorAll(".input-contents")[1].value;
+            const reserveIdValue2 = document.querySelectorAll(".input-contents")[2].value;
+            const reserveNameValue = document.querySelectorAll(".input-contents")[3].value;
+       
+            const checkReserve = new CheckReserve(reserveIdValue1, numberValue, reserveIdValue2, reserveNameValue);
+
+            if(reserveIdValue2 && reserveNameValue != null) {
+                location.href = `http://localhost:8000/check?reserveId=${reserveIdValue2}&Name=${reserveNameValue}`;
+            }
+            ReservePageApi.getInstance().getReserveNumberPage(checkReserve);
+        }
+    }
 }
 
+class CheckReserve {
+    reserveId = null;
+	number = null;
+	reserveName = null;
+
+    constructor(reserveId, number, reserveName) {
+        this.reserveId = reserveId;
+        this.number = number;
+        this.reserveName = reserveName;
+    }
+}
