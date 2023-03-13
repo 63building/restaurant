@@ -56,7 +56,7 @@ class ComponentEvent {
         }
         return this.#instance;
     }
-    // tab-1, tab-2 div id로 하는 방법이 있을건데... 연구해야함ㅎㅎ
+    
     addClickEventReserveButton1() {
         const reserveButton1 = document.querySelector(".reserve-button1");
 

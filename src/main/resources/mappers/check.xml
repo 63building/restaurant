@@ -34,8 +34,8 @@
         where
             1 = 1
         and reserve_id = #{reserveId}
-        <if test='number != null and number != ""'>number = #{number}</if>
-        <if test='reserveName != null and reserveName != ""'>reserve_Name = #{reserveName}</if>
+        <if test='number != null and number != ""'>and number = #{number}</if>
+        <if test='reserveName != null and reserveName != ""'>and reserve_Name = #{reserveName}</if>
 
 
     </select>
