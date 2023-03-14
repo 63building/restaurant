@@ -33,4 +33,6 @@ public class DinningMst {
 
     private String request;
 
+    private String menu;
+
 }

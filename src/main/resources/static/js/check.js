@@ -40,20 +40,18 @@ class CheckApi {
 		return returnData;
 	}
 
-	deleteReserve(deleteResvID) {
+	deleteReserve(deleteData) {
 		$.ajax({
             async: false,
             type: "delete",
             url: `http://localhost:8000/api/check/${reserveId}`,
-			data: JSON.stringify(
-                {
-                    reserveId: deleteResvID
-                }
-            ),
+			data: {
+				deleteData: deleteData
+			},
             dataType: "json",
             success: (response) => {
                 alert("예약 취소가 완료 되었습니다.");
-                location.reload("/check/page");
+                window.location.reload("/check/page");
             },
             error: (error) => {
                 alert("예약 취소가 실패 되었습니다. 관리자에게 문의하세요.");
@@ -81,9 +79,6 @@ class CheckService{
 		const reserveContents3 = document.querySelector(".reserve-contents3 tbody");
 		const reserveContents4 = document.querySelector(".reserve-contents4 tbody");
 		reserveContents1, reserveContents2, reserveContents3, reserveContents4.innerHTML = "";
-		// reserveContents2.innerHTML = "";
-		// reserveContents3.innerHTML = "";
-		// reserveContents4.innerHTML = "";
 
 		responseData.forEach(data => {
 			reserveContents1.innerHTML += `
@@ -153,9 +148,8 @@ class ComponentEvent {
 
 		deleteButton.onclick = () => {
 			if(confirm("정말로 삭제하시겠습니까?")) {
-                const deleteResvID = document.querySelectorAll(".reserve-id");
-		
-                CheckService.getInstance().loadReserveData(deleteResvID);
+				const deleteData = new CheckReserve(reserveContents1, reserveContents2, reserveContents3, reserveContents4);
+				
 			}
 		}
 	}

@@ -1,8 +1,8 @@
 package com.koreait.restaurant.web.api;
 
-import com.koreait.restaurant.service.ReserveSearchService;
+import com.koreait.restaurant.service.Resv_SearchService;
 import com.koreait.restaurant.web.dto.CMRespDto;
-import com.koreait.restaurant.web.dto.SearchReserveReqDto;
+import com.koreait.restaurant.web.dto.SearchResvReqDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @RequestMapping("/api/reserve")
-public class ReserveSearchApi {
+public class Resv_SearchApi {
 
     @Autowired
-    private ReserveSearchService reserveService;
+    private Resv_SearchService reserveService;
 
     @PostMapping("/search/{reserveId}")
-    public ResponseEntity<?> getCheckPage(@RequestBody SearchReserveReqDto searchReserveReqDto) {
+    public ResponseEntity<?> getCheckPage(@RequestBody SearchResvReqDto searchResvReqDto) {
 
         return ResponseEntity
                 .ok()
-                .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", reserveService.userSearchReserve(searchReserveReqDto)));
+                .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", reserveService.userSearchReserve(searchResvReqDto)));
     }
 
 }

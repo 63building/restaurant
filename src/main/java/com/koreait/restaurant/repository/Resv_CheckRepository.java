@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 @Mapper
-public interface CheckRepository {
+public interface Resv_CheckRepository {
 
 
    public List<DinningMst> searchReserveIdAndNumber(CheckReqDto searchReqDto);

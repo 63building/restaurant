@@ -1,7 +1,7 @@
 package com.koreait.restaurant.service;
 
 import com.koreait.restaurant.entity.DinningMst;
-import com.koreait.restaurant.repository.CheckRepository;
+import com.koreait.restaurant.repository.Resv_CheckRepository;
 import com.koreait.restaurant.web.dto.CheckReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,18 +11,18 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CheckService {
+public class Resv_CheckService {
 
     @Autowired
-    private CheckRepository searchRepository;
+    private Resv_CheckRepository checkRepository;
 
 
-    public List<DinningMst> searchReserveIdAndNumber(CheckReqDto searchReqDto) {
-        System.out.println(searchRepository.searchReserveIdAndNumber(searchReqDto));
-        return searchRepository.searchReserveIdAndNumber(searchReqDto);
+    public List<DinningMst> searchReserveIdAndNumber(CheckReqDto checkReqDto) {
+        System.out.println(checkRepository.searchReserveIdAndNumber(checkReqDto));
+        return checkRepository.searchReserveIdAndNumber(checkReqDto);
     }
 
     public void removeReserve(int reserveId) {
-        searchRepository.deleteReserve(reserveId);
+        checkRepository.deleteReserve(reserveId);
     }
 }

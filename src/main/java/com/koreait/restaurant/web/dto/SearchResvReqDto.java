@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class SearchReserveReqDto {
+public class SearchResvReqDto {
 
     private int reserveId;
 

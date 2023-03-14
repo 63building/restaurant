@@ -1,7 +1,7 @@
 package com.koreait.restaurant.web.api;
 
 import com.koreait.restaurant.entity.DinningMst;
-import com.koreait.restaurant.service.CheckService;
+import com.koreait.restaurant.service.Resv_CheckService;
 import com.koreait.restaurant.web.dto.CMRespDto;
 import com.koreait.restaurant.web.dto.CheckReqDto;
 import lombok.extern.slf4j.Slf4j;
@@ -15,16 +15,16 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/api")
-public class CheckApi {
+public class Resv_CheckApi {
 
     @Autowired
-    private CheckService searchService;
+    private Resv_CheckService searchService;
 
     @GetMapping("/check")
-    public ResponseEntity<CMRespDto<List<DinningMst>>> searchReserveIdAndNumber(CheckReqDto searchReqDto) {
+    public ResponseEntity<CMRespDto<List<DinningMst>>> searchReserveIdAndNumber(CheckReqDto checkReqDto) {
         return ResponseEntity
                 .ok()
-                .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", searchService.searchReserveIdAndNumber(searchReqDto)));
+                .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", searchService.searchReserveIdAndNumber(checkReqDto)));
 
     }
 
