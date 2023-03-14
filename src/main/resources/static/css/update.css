@@ -45,7 +45,8 @@
     width : 100px;
 
     display: flex;
-    /* justify-content: center; */
+    
+    justify-content: space-between;
     
 }
 
@@ -58,9 +59,9 @@
     height: 20px;
 }
 
-.person, .child {
+.person, .child, .time {
     padding: 10px;
-    padding-left: 25px;
+    padding-left: 23px;
     margin: 1px;
 
     width: 100px;
@@ -68,10 +69,15 @@
     font-size: 15px;
 }
 
+.time {
+    padding-left: 20px;
+    width: 150px;
+}
+
 .reserve-submit {
     float: right;
     
-    margin: 10px 0px;
+    margin: 10px 2px;
 
     font-size: 20px;
     color: black;

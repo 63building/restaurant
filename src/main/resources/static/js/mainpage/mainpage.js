@@ -75,6 +75,7 @@ class MenuListService {
                 </div>
             </div>     
             `
+            
         });
     }
 }
