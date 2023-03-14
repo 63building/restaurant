@@ -2,13 +2,18 @@ server:
   port: 8000
 
 spring:
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
   mvc:
     static-path-pattern: /static/**
     pathmatch:
       matching-strategy: ant_path_matcher
-
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
+<<<<<<< HEAD
     url: jdbc:mysql://localhost:3306/restaurant
     username: root
     password: q1w2e3r4
@@ -18,7 +23,18 @@ spring:
 #    url: jdbc:mysql://databasepeng.cxkzclvqze2g.ap-northeast-2.rds.amazonaws.com:3306/restaurant
 #    username: admin
 #    password: 1q2w3e4r
+=======
+    url: jdbc:mysql://database-1.ctnjv8rfym3f.ap-northeast-2.rds.amazonaws.com/restaurant
+    username: admin
+    password: dkssud1234
+>>>>>>> origin/admin
 
 mybatis:
   mapper-locations:
     - /mappers/*.xml
+<<<<<<< HEAD
+=======
+
+file:
+  path: C:/63building/63restaurant/upload/
+>>>>>>> origin/admin
