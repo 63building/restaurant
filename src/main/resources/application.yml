@@ -2,15 +2,19 @@ server:
   port: 8000
 
 spring:
+<<<<<<< HEAD
   servlet:
     multipart:
       max-file-size: 200MB
       max-request-size: 200MB
 
+=======
+>>>>>>> origin/BookCh&main
   mvc:
     static-path-pattern: /static/**
     pathmatch:
       matching-strategy: ant_path_matcher
+<<<<<<< HEAD
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
 <<<<<<< HEAD
@@ -38,3 +42,15 @@ mybatis:
 file:
   path: C:/63building/63restaurant/upload/
 >>>>>>> origin/admin
+=======
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/restaurant
+    username: root
+    password: 1q2w3e4r
+
+mybatis:
+  mapper-locations:
+    - /mappers/*.xml
+>>>>>>> origin/BookCh&main

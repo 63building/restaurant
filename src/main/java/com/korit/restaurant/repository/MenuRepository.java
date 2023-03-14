@@ -1,5 +1,6 @@
 package com.korit.restaurant.repository;
 
+<<<<<<< HEAD
 import com.korit.restaurant.entity.admin.MenuImage;
 import com.korit.restaurant.entity.admin.MenuMst;
 import com.korit.restaurant.web.dto.MenuReqDto;
@@ -8,10 +9,16 @@ import com.korit.restaurant.web.dto.SearchReqDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import javax.validation.Valid;
+=======
+import com.korit.restaurant.Web.Controller.dto.MenuListDto;
+import org.apache.ibatis.annotations.Mapper;
+
+>>>>>>> origin/BookCh&main
 import java.util.List;
 
 @Mapper
 public interface MenuRepository {
+<<<<<<< HEAD
     public int getMenuTotalCount(SearchNumberListReqDto searchNumberListReqDto);
     public List<MenuMst> searchMenu(@Valid SearchReqDto searchSReqDto);
 
@@ -32,4 +39,8 @@ public interface MenuRepository {
 
     public int deleteMenuImage(int imageId);
 
+=======
+
+    public List<MenuListDto> getMenuList(MenuListDto menuListDto);
+>>>>>>> origin/BookCh&main
 }

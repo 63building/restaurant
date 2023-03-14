@@ -1,5 +1,9 @@
 HELP.md
+<<<<<<< HEAD
 /bin
+=======
+bin/
+>>>>>>> origin/BookCh&main
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
