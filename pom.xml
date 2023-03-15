@@ -11,7 +11,7 @@
 	<groupId>com.koreait</groupId>
 	<artifactId>restaurant</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>63restaurant</name>
+	<name>restaurant</name>
 	<description>restaurant reservation system</description>
 	<properties>
 		<java.version>11</java.version>
