@@ -3,10 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.korit.restaurant.repository.SearchReservationRepository">
+<mapper namespace="com.koreait.restaurant.repository.SearchReservationRepository">
 
     <select id="getAdminSearchReservationTotalCount"
-            parameterType="com.korit.restaurant.web.dto.SearchReservationReqDto"
+            parameterType="com.koreait.restaurant.web.dto.SearchReservationReqDto"
             resultType="Integer">
         select
             count(*)
@@ -22,8 +22,8 @@
     </select>
 
     <select id="adminSearchReservation"
-            parameterType="com.korit.restaurant.web.dto.SearchReservationReqDto"
-            resultType="com.korit.restaurant.entity.admin.SearchReservationMst">
+            parameterType="com.koreait.restaurant.web.dto.SearchReservationReqDto"
+            resultType="com.koreait.restaurant.entity.admin.SearchReservationMst">
         select
             reserve_id as reserveId,
             reserve_name as reserveName,
