@@ -20,7 +20,7 @@ public class MenuListApi {
     private MenuListService menuListService;
 
 
-    @GetMapping("/admin/menus")
+    @GetMapping("/admin/main/menus")
     public ResponseEntity<CMRespDto<?>> getMenuList(MenuListDto menuListDto) {
         System.out.println(menuListService.getMenuService(menuListDto));
         return ResponseEntity

@@ -25,7 +25,7 @@ class MenuListApi {
         $.ajax({
             async: false,
             type: "get",
-            url: "http://127.0.0.1:8000/api/admin/menus",
+            url: "http://127.0.0.1:8000/api/admin/main/menus",
             // contentType: "application/json",
             // data: searchObj,
             dataType: "json",

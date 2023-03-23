@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ParamsAop {
 
-    @Pointcut("@annotation(com.korit.restaurant.aop.annotation.ParamsAspect)")
+    @Pointcut("@annotation(com.koreait.restaurant.aop.annotation.ParamsAspect)")
     private void pointCut() {}
 
     @Around("pointCut()")
