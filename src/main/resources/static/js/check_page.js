@@ -84,7 +84,7 @@ class ComponentEvent {
             const numberValue = document.querySelectorAll(".input-contents")[1].value;
             const reserveIdValue2 = document.querySelectorAll(".input-contents")[2].value;
             const reserveNameValue = document.querySelectorAll(".input-contents")[3].value;
-       
+    
             const checkReserve = new CheckReserve(reserveIdValue1, numberValue, reserveIdValue2, reserveNameValue);
 
             if(reserveIdValue2 && reserveNameValue != null) {

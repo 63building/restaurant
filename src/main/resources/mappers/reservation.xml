@@ -21,7 +21,9 @@
         </if>
     </select>
 
-    <select id="searchReservation" parameterType="com.koreait.restaurant.web.dto.SearchReqDto" resultType="com.koreait.restaurant.entity.admin.ReservationMst">
+    <select id="searchReservation"
+            parameterType="com.koreait.restaurant.web.dto.SearchReqDto"
+            resultType="com.koreait.restaurant.entity.admin.ReservationMst">
         SELECT
             reserve_id as reserveId,
             reserve_name as reserveName,

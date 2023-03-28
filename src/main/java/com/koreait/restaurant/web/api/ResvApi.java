@@ -1,6 +1,6 @@
 package com.koreait.restaurant.web.api;
 
-import com.koreait.restaurant.web.api.dto.ResvDto;
+import com.koreait.restaurant.web.dto.ResvDto;
 import com.koreait.restaurant.aop.annotation.ParamsAspect;
 import com.koreait.restaurant.aop.annotation.ValidAspect;
 import com.koreait.restaurant.service.ResvService;

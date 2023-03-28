@@ -1,4 +1,4 @@
-package com.koreait.restaurant.web.api.dto;
+package com.koreait.restaurant.web.dto;
 //230113
 
 import lombok.Data;
