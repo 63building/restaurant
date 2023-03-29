@@ -6,6 +6,7 @@ window.onload = () => {
 const URLSearch = new URLSearchParams(location.search);
 
 
+
 class CheckApi {
 	static #instance = null;
 	static getInstance() {
@@ -26,6 +27,7 @@ class CheckApi {
 				reserveId : URLSearch.get("reserveId"),
 				number : URLSearch.get("number"),
 				reserveName : URLSearch.get("reserveName")
+
 			},
 			dataType: "json",
 			success: response => {
@@ -40,26 +42,24 @@ class CheckApi {
 		return returnData;
 	}
 
-	deleteReserve(deleteData) {
-		$.ajax({
+	reserveDataDeleteRequest(reserveId) {
+        $.ajax({
             async: false,
             type: "delete",
-            url: `http://localhost:8000/api/check/${reserveId}`,
-			data: {
-				deleteData: deleteData
-			},
+            url: "http://localhost:8000/api/check/" + reserveId,
             dataType: "json",
             success: (response) => {
                 alert("예약 취소가 완료 되었습니다.");
-                window.location.reload("/check/page");
+				location.reload();
             },
             error: (error) => {
                 alert("예약 취소가 실패 되었습니다. 관리자에게 문의하세요.");
                 console.log(error);
             }
-        })
+        });
     }
-		
+
+
 }
 
 class CheckService{
@@ -71,6 +71,7 @@ class CheckService{
 		return this.#instance;
 	}
 
+	// DB 데이터 불러오기
 	loadReserveData() {
 		const responseData = CheckApi.getInstance().getReserveData();
 
@@ -146,14 +147,25 @@ class ComponentEvent {
 	addClickEventDeleteButton() {
 		const deleteButton = document.querySelector(".delete-button");
 
-		deleteButton.onclick = () => {
-			if(confirm("정말로 삭제하시겠습니까?")) {
-				const deleteData = new CheckReserve(reserveContents1, reserveContents2, reserveContents3, reserveContents4);
+		const url = location.search;
+
+			deleteButton.onclick = () => {
 				
-			}
+				let urlParams = new URLSearchParams(url);
+
+				let reserveId = urlParams.get('reserveId')
+				console.log(reserveId);
+				console.log("클릭됨");
+
+				console.log(urlParams.get('reserveId'));
+
+				localStorage.removeItem(reserveId)
+				
+			CheckApi.getInstance().reserveDataDeleteRequest(reserveId);
+
 		}
 	}
 
+	
+
 }
-
-

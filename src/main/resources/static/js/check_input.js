@@ -3,7 +3,7 @@ window.onclick = () => {
     ComponentEvent.getInstance().addClickEventReserveButton2();
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
 	
 	$('ul.reserve-search li').click(function(){
 		var tab_id = $(this).attr('data-tab');
