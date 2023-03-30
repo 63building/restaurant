@@ -50,7 +50,7 @@ class CheckApi {
             dataType: "json",
             success: (response) => {
                 alert("예약 취소가 완료 되었습니다.");
-				location.reload();
+				location.href = `http://localhost:8000/check/input`;
             },
             error: (error) => {
                 alert("예약 취소가 실패 되었습니다. 관리자에게 문의하세요.");
@@ -149,23 +149,16 @@ class ComponentEvent {
 
 		const url = location.search;
 
-			deleteButton.onclick = () => {
-				
-				let urlParams = new URLSearchParams(url);
-
-				let reserveId = urlParams.get('reserveId')
-				console.log(reserveId);
-				console.log("클릭됨");
-
-				console.log(urlParams.get('reserveId'));
-
-				localStorage.removeItem(reserveId)
-				
+		deleteButton.onclick = () => {
+			
+			let urlParams = new URLSearchParams(url);
+			let reserveId = urlParams.get('reserveId')
+			
+			localStorage.removeItem(reserveId)
+			
 			CheckApi.getInstance().reserveDataDeleteRequest(reserveId);
 
 		}
 	}
-
 	
-
 }
