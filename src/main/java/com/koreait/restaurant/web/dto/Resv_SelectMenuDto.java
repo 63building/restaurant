@@ -1,9 +1,9 @@
-package com.koreait.restaurant.web.api.dto;
+package com.koreait.restaurant.web.dto;
 
 import lombok.Data;
 
 @Data
-//
+
 public class Resv_SelectMenuDto {
     private int menuCode;
     private String menuName;
