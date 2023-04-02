@@ -20,11 +20,13 @@ spring:
     password: q1w2e3r
 
 file:
-  path: C:/Users/iiuuy/문서/restaurant/upload/
+  path: C:\63building\upload
 
 
 mybatis:
   mapper-locations:
     - /mappers/*.xml
+
+
 
 
