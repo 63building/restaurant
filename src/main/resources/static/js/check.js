@@ -1,11 +1,22 @@
 window.onload = () => {
 	CheckService.getInstance().loadReserveData();
+	ComponentEvent.getInstance().addHomeButtonClickEvent();
+	ComponentEvent.getInstance().addClickEventmodification();
 	ComponentEvent.getInstance().addClickEventDeleteButton();
 }
 
 const URLSearch = new URLSearchParams(location.search);
 
+const homeScroll = document.querySelector("#home");
+const homeHeight = homeScroll.getBoundingClientRect().height;
 
+document.addEventListener('scroll', () => {
+   if (window.scrollY > homeHeight) {
+      homeScroll.classList.add('active');
+   } else {
+      homeScroll.classList.remove('active');
+   }
+});
 
 class CheckApi {
 	static #instance = null;
@@ -50,7 +61,7 @@ class CheckApi {
             dataType: "json",
             success: (response) => {
                 alert("예약 취소가 완료 되었습니다.");
-				location.href = `http://localhost:8000/check/input`;
+				DA
             },
             error: (error) => {
                 alert("예약 취소가 실패 되었습니다. 관리자에게 문의하세요.");
@@ -71,7 +82,6 @@ class CheckService{
 		return this.#instance;
 	}
 
-	// DB 데이터 불러오기
 	loadReserveData() {
 		const responseData = CheckApi.getInstance().getReserveData();
 
@@ -133,6 +143,7 @@ class CheckService{
 			`;
 		});
 	}
+	
 }
 
 class ComponentEvent {
@@ -143,6 +154,22 @@ class ComponentEvent {
         }
         return this.#instance;
     }
+
+	addHomeButtonClickEvent() {
+        const homeButton = document.querySelector(".home-button");
+
+        homeButton.onclick = () => {
+            location.href = `http://localhost:8000/menulist`;
+        }
+    }
+
+	addClickEventmodification() {
+		const changeButton = document.querySelector(".change-button");
+
+		changeButton.onclick = () => {
+			location.href = `http://localhost:8000/reservation/modification`;
+		}
+	}
 
 	addClickEventDeleteButton() {
 		const deleteButton = document.querySelector(".delete-button");
@@ -160,5 +187,7 @@ class ComponentEvent {
 
 		}
 	}
+
 	
+
 }

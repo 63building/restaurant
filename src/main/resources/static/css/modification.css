@@ -245,12 +245,12 @@ button {
     height: 40px;
 }
 
-.change-button {
+.return-button {
     margin-right: 20px;
 
     cursor: pointer;
 }
 
-.delete-button {
+.modification-button {
     cursor: pointer;
 }

@@ -20,39 +20,74 @@
 
     <select id="getReserveData" resultType="com.koreait.restaurant.entity.DinningMst">
         select
-            reserve_id as reserveId,
-            reserve_name as reserveName,
-            reserve_date as reserveDate,
-            reserve_time as reserveTime,
-            number,
-            email,
-            adult,
-            child,
-            request
+        reserve_id as reserveId,
+        reserve_name as reserveName,
+        reserve_date as reserveDate,
+        reserve_time as reserveTime,
+        number,
+        email,
+        adult,
+        child,
+        request
         from
-            dinning_mst
-        where
-            1 = 1
+        dinning_mst
+        1 = 1        where
+
         and reserve_id = #{reserveId}
         <if test='number != null and number != ""'>and number = #{number}</if>
         <if test='reserveName != null and reserveName != ""'>and reserve_Name = #{reserveName}</if>
-
-
     </select>
 
+    <select id="findReserveId" resultType="com.koreait.restaurant.entity.DinningMst">
+        SELECT
+        reserve_name as reserveName,
+        reserve_id as reserveId,
+        number,
+        email
+        from
+        dinning_mst
+        where
+        reserve_id = #{reserveId}
+    </select>
 
     <insert id="saveReserveCheck" parameterType="com.koreait.restaurant.web.dto.CheckReqDto">
         insert into dinning_mst
         values
-            (0, #{reserveId}, #{reserveName}, #{reserveDate}, #{reserveTime}, #{number}, #{email}, #{adult}, #{child}, #{request})
+        (0, #{reserveId}, #{reserveName}, #{reserveDate}, #{reserveTime}, #{number}, #{email}, #{adult}, #{child}, #{request})
     </insert>
+
+    <select id="findUserByReserveCheck" parameterType="integer" resultType="com.koreait.restaurant.entity.DinningMst">
+        select
+        reserve_id as reserveId,
+        number,
+        reserve_name as reserveName
+        from
+        dinning_mst
+        where
+        1 = 1
+        and reserve_id = #{reserveId}
+        and number = #{number}
+        or reserve_name = #{reserveName}
+    </select>
+
+    <update id="reservationUpdateByReserveId" parameterType="com.koreait.restaurant.entity.DinningMst">
+        update dinning_mst
+        set
+        reserve_date = #{reserveDate},
+        reserve_time = #{reserveTime},
+        adult = #{adult},
+        child = #{child},
+        request = #{request}
+        where
+        reserve_id = #{reserveId}
+    </update>
 
     <delete id="deleteReserve" >
         delete
         from
-            dinning_mst
+        dinning_mst
         where
-            reserve_id = #{reserveId}
+        reserve_id = #{reserveId}
     </delete>
 
 
