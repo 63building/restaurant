@@ -1,5 +1,4 @@
 package com.koreait.restaurant.web.dto;
-//230113
 
 import lombok.Data;
 
@@ -26,4 +25,6 @@ public class ResvDto {
     private int child;
 
     private String guest;
+
+    private String request;
 }

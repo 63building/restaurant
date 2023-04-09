@@ -6,16 +6,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/check")
+@RequestMapping("/reservation")
 public class Resv_CheckController {
 
-    @GetMapping("")
+    @GetMapping("/check")
     public String loadcheck() {
         return "/check";
     }
-    @GetMapping("/input")
-    public String loadcheckPage() {
+
+    @GetMapping("/check/input")
+    public String loadCheckInput() {
         return "check_input";
+    }
+
+    @GetMapping("/modification")
+    public String loadModificationPage() {
+        return "modification";
     }
 }
 

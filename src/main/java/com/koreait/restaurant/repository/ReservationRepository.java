@@ -7,7 +7,7 @@ import com.koreait.restaurant.web.dto.SearchReqDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
-
+//admin
 @Mapper
 public interface ReservationRepository {
     public int getReservationTotalCount(SearchNumberListReqDto searchNumberListReqDto);

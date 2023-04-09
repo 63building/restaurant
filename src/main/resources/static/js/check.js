@@ -1,20 +1,28 @@
 window.onload = () => {
 	CheckService.getInstance().loadReserveData();
+	ComponentEvent.getInstance().addHomeButtonClickEvent();
+	ComponentEvent.getInstance().addClickEventmodification();
 	ComponentEvent.getInstance().addClickEventDeleteButton();
 }
+
+const URLSearch = new URLSearchParams(location.search);
 
 const homeScroll = document.querySelector("#home");
 const homeHeight = homeScroll.getBoundingClientRect().height;
 
-document.addEventListener('scroll', () => {
-	if (window.scrollY > homeHeight) {
-		homeScroll.classList.add('active');
-	} else {
-		homeScroll.classList.remove('active');
-	}
-});
+	/*modification.html으로 넘겨주는 값 -> 120번째줄로 이동*/
+const sendcheckObj={
+    reserveId : null,
+    number : null
+}
 
-const URLSearch = new URLSearchParams(location.search);
+document.addEventListener('scroll', () => {
+   if (window.scrollY > homeHeight) {
+      homeScroll.classList.add('active');
+   } else {
+      homeScroll.classList.remove('active');
+   }
+});
 
 class CheckApi {
 	static #instance = null;
@@ -59,7 +67,7 @@ class CheckApi {
             dataType: "json",
             success: (response) => {
                 alert("예약 취소가 완료 되었습니다.");
-				location.href = `http://localhost:8000/check/input`;
+
             },
             error: (error) => {
                 alert("예약 취소가 실패 되었습니다. 관리자에게 문의하세요.");
@@ -80,7 +88,6 @@ class CheckService{
 		return this.#instance;
 	}
 
-	// DB 데이터 불러오기
 	loadReserveData() {
 		const responseData = CheckApi.getInstance().getReserveData();
 
@@ -88,32 +95,40 @@ class CheckService{
 		const reserveContents2 = document.querySelector(".reserve-contents2 tbody");
 		const reserveContents3 = document.querySelector(".reserve-contents3 tbody");
 		const reserveContents4 = document.querySelector(".reserve-contents4 tbody");
-		reserveContents1, reserveContents2, reserveContents3, reserveContents4.innerHTML = "";
+
 
 		responseData.forEach(data => {
 			reserveContents1.innerHTML += `
-				<tr>                       
+				<tr>
 					<th>성명(한글)</th>
-					<td>${data.reserveName}</td> 
+					<td>${data.reserveName}</td>
 				</tr>
-				<tr>                       
+				<tr>
 					<th>예약번호</th>
 					<td class="reserve-id">${data.reserveId}</td>
 				</tr>
 				<tr>
 					<th>연락처</th>
 					<td>${data.number}</td>
-				</tr>        
+				</tr>
 				<tr>
 					<th>이메일</th>
 					<td>${data.email}</td>
-				</tr>  
+				</tr>
 			`;
+
+			/*localStorage.setItem 에 JSON으로 값 저장 -> modification.js로 이동*/
+			sendcheckObj.reserveId = data.reserveId;
+			sendcheckObj.number = data.number;
+			localStorage.setItem('sendcheckObj', JSON.stringify(sendcheckObj));
+
+
+			console.log(sendcheckObj);
 		});
 		responseData.forEach(data => {
 			reserveContents2.innerHTML += `
-				<tr>                       
-					<th>예약일</th> 
+				<tr>
+					<th>예약일</th>
 					<td>${data.reserveDate}</td>
 				</tr>
 				<tr>
@@ -124,7 +139,7 @@ class CheckService{
 		});
 		responseData.forEach(data => {
 			reserveContents3.innerHTML += `
-				<tr> 
+				<tr>
 					<th>대인</th>
 					<td>${data.adult}명</td>
 				</tr>
@@ -136,12 +151,13 @@ class CheckService{
 		});
 		responseData.forEach(data => {
 			reserveContents4.innerHTML += `
-			<tr> 
+			<tr>
 				<td>${data.request}</td>
 			</tr>
 			`;
 		});
 	}
+
 }
 
 class ComponentEvent {
@@ -153,21 +169,39 @@ class ComponentEvent {
         return this.#instance;
     }
 
+	addHomeButtonClickEvent() {
+        const homeButton = document.querySelector(".home-button");
+
+        homeButton.onclick = () => {
+            location.href = `http://localhost:8000/menulist`;
+        }
+    }
+
+	addClickEventmodification() {
+		const changeButton = document.querySelector(".change-button");
+
+		changeButton.onclick = () => {
+			location.href = `http://localhost:8000/reservation/modification`;
+		}
+	}
+
 	addClickEventDeleteButton() {
 		const deleteButton = document.querySelector(".delete-button");
 
 		const url = location.search;
 
 		deleteButton.onclick = () => {
-			
+
 			let urlParams = new URLSearchParams(url);
 			let reserveId = urlParams.get('reserveId')
-			
+
 			localStorage.removeItem(reserveId)
-			
+
 			CheckApi.getInstance().reserveDataDeleteRequest(reserveId);
 
 		}
 	}
-	
+
+
+
 }
