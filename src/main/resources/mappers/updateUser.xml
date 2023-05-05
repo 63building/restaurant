@@ -31,16 +31,18 @@
     <update id="updateUser"
             parameterType="com.koreait.restaurant.web.dto.UpdateUseReqDto">
 
-        update
-            dinning_mst
+        update dinning_mst
+
         set
-            reserve_date= #{reserveDate},
             reserve_time = #{reserveTime},
+            reserve_date= #{reserveDate},
             adult = #{adult},
-            child = #{child}
+            child = #{child},
+            menu = #{menu}
 
         where
             reserve_id = #{reserveId}
+        and number = #{number}
 
     </update>
 </mapper>

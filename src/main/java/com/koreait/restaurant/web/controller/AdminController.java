@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("")
 public class AdminController {
 
     @GetMapping("/home")

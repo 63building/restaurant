@@ -1,33 +1,32 @@
     
-   function requestClick(){
+   function resvValueCheck(){
     var number1 = document.getElementById('mobile1').value;
     var number2 = document.getElementById('mobile2').value;
     var number3 = document.getElementById('mobile3').value;
 
     resvObj.number = number1 +'-' + number2 + '-' +number3;
+    resvObj.customerName = document.getElementById('customer_name').value;
 
     resvObj.guest = resvObj.adult + resvObj.child;
-    resvObj.customerName = document.getElementById('customer_name').value;
-    resvObj.request = document.getElementById('order_msg').value;
+
+    resvObj.request = document.getElementById('bul01').value;
 
    }
-
-
+   
     const resvObj = {
         customerName : "",
         resvDate :"",
-        resvTime :"",
+        resvTime : "",
         number : "",
         email : "",
         adult : "",
         child : "",
         guest : "",
-        amount : "",
-        request : ""
+        request : "",
+        menu : "",
+        amount : ""
     }
 
-    // var resvEmail = document.getElementById('email_1').value;
-    // var domain = document.getElementById('email_txt').value;
 
 
 function requestPay() {
@@ -54,12 +53,11 @@ function requestPay() {
                 dataType : "json",
                 success : response => {
                     console.log(response);
-                    successFlag = true;      
-                }
+                    successFlag = true;
+                }                
             })
-            location.href="/menulist";
-          
-        }else{
+            location.href = "/menulist" ;
+        } else {
             alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
         }
     });

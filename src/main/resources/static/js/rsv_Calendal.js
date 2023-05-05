@@ -150,7 +150,6 @@ $("#resvMon").on("click", "td", function () {
 
     $("#check01").html(clickedYear + "년" + clickedMonth + "월" + td.text() + "일");
     resvObj.resvDate = clickedYear + "-" + clickedMonth + "-" + td.text();
-    
  });
 
  
