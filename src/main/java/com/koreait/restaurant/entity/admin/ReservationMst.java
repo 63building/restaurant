@@ -14,11 +14,11 @@ public class ReservationMst {
 
 //    @ApiModelProperty(value = "예약요일", example = "금요일", required = true)
 //    @NotBlank
-    public Date reserveDate;
+    public String reserveDate;
 
 //    @ApiModelProperty(value = "예약시간", example = "17시", required = true)
 //    @NotBlank
-    public Time reserveTime;
+    public String reserveTime;
 
 //    @ApiModelProperty(value = "이메일", example = "aaa@gmail.com", required = true)
 //    @NotBlank

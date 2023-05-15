@@ -27,7 +27,6 @@ html,body {
     font-size: 100px;
 }
 
-
 .home-button {
     position: fixed;
     left: 96%;
@@ -88,69 +87,63 @@ background-color: #dddddd;
 }
 
 .select {
-    margin: 40px;
+    display: flex;
+
+    margin: 20px;
 
     cursor: pointer;
 }
 
-.reserve-search {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+.reservation-search1, .reservation-search2{
     margin: 0px;
-    width: 835px;
+    width: 400px;
     height: 40px;
 
     border: 1px solid #E1EEDD;
+    font-size: 25px;
 
-    cursor: pointer;
 }
 
-ul.reserve-search{
-	list-style: none;
-
-	margin: 0px;
-	padding: 0px;
-}
-
-.reserve-change {
-    display: inline-block;
-
+.reservation-change1,.reservation-change2 {
     margin: 1px;
-    padding-bottom: 5px;
-    width: 420px;
+    height: 37px;
+
+    background-color: #E1EEDD;
+}
+
+
+.reservation-change1 th, .reservation-change2 th {
+    width: 400px;
 
     text-align: center;
     font-size: 20px;
-    font-weight: bold;
-    background: #E1EEDD;
 }
 
-.reserve-change:hover {
-    background-color: #434242;
+.reservation-change1 th:hover, .reservation-change2 th:hover {
     color: white;
+    background-color: #434242;
 }
 
-.serve-container.current{
-	display: inherit;
+.serve-container-group {
+    height: 700px;
 }
 
-.serve-container{
-    display: none;
+.serve-container1 {
+    display: flex;
+    justify-content: center;
+    position: relative;
 
-    margin-top: 10px;
-    height: 350px;
-    
+    margin-top: 40px;
+    width: 798px;
+    height: 300px;
     border: 1px solid #183a1d;
-    border-radius: 5px;
 }
 
-.third-container {
+.third-container1 {
     display: flex;
     justify-content: space-between;
 
-    margin: 40px 40px 40px 150px;
+    margin: 40px 40px 40px 120px;
 }
 
 .p-group {
@@ -158,19 +151,18 @@ ul.reserve-search{
     flex-direction: column;
     justify-content: center;
 
-    margin: 23px 30px 25px 40px;
+    margin: 20px 30px 22px 40px;
 
     width: 100px;
     font-weight: bold;
 }
 
-.reserve-number1, .reserve-number2 {
+.reservation-number {
     font-size: 20px;
 }
 
-.number-telephone1, .number-telephone2 {
-    margin: 15px 0px;
-
+.change-name1 {
+    display: block;
     font-size: 20px;
 }
 
@@ -179,22 +171,15 @@ ul.reserve-search{
     flex-direction: column;
     justify-content: center;
 
-    margin-top: 34px;
-
-    cursor: pointer;
+    margin: 0px;
 }
 
-.input-contents {
-    cursor: pointer;
+
+.input-one {
+    margin-bottom: 45px;
 }
 
-.check-error {
-    margin-bottom: 20px;
-    font-size: 11px;
-    color: red;
-}
-
-.reserve-number {
+.reservation-number {
     margin-bottom: 20px;
 }
 
@@ -204,23 +189,22 @@ ul.reserve-search{
     align-items: center;
 }
 
-.reserve-button1, .reserve-button2 {
+.reservation-button {
     margin: 0px;
     padding: 0px;
 
     width: 150px;
     height: 90px;
 
-    border-radius: 3px;
     font-size: 18px;
-    font-weight: bold;
     color: white;
     background-color: #434242;
+    border-radius: 3px;
 
     cursor: pointer;
 }
 
-.reserve-button1:hover, .reserve-button2:hover {
+.reservation-button:hover {
     background-color: #183a1d;
 }
 
@@ -233,14 +217,27 @@ ul.reserve-search{
 }
 
 .search-number {
-    margin: 40px 5px 0px 40px;
-    padding: 10px;
+    margin-left: 25px;
+    padding: 7px;
 
     font-size: 15px;
     color: #a39e9e;
 }
 
+.serve-container2 {
+    display: flex;
+    position: absolute;
 
+    width: 798px;
+    height: 300px;
+}
 
+.third-container2 {
+    margin: 40px 40px 40px 120px;
+}
 
-
+.change-name2 {
+    display: none;
+    margin: 108px 0px 0px 3px;
+    font-size: 20px;
+}

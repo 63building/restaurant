@@ -114,6 +114,5 @@ class updateEvent {
                 updateService.getInstance().loadUserService();
                 console.log(readButton);
             }
-    }
-    
+    } 
 }

@@ -27,22 +27,7 @@
             <div class="main-box">
                 <table class="reserve-contents1" >
                     <tbody>
-                        <tr>                       
-                            <th>성명(한글)</th>
-                            <td class="td-contents"></td> 
-                        </tr>
-                        <tr>                       
-                            <th>예약번호</th>
-                            <td class="td-contents"></td>
-                        </tr>
-                        <tr>
-                            <th>연락처</th>
-                            <td class="td-contents"></td>
-                        </tr>        
-                        <tr>
-                            <th>이메일</th>
-                            <td class="td-contents"></td>
-                        </tr>  
+
                     </tbody> 
                 </table>
             </div>
@@ -53,17 +38,13 @@
                     <div class="array-contents">
                         <table class="reserve-contents2">
                             <tbody>
-                                <tr>                       
-                                    <th>예약일</th> 
-                                </tr>
-                                <tr>
-                                    <th>예약시간</th>
-                                </tr>
+
                             </tbody> 
                         </table> 
                         <div class="select-group">
-                            <input type="date" class="modification-input">
-                            <select class="modification-input time">
+                            <input type="date" class="modification-input" id="dateSelect">
+
+                            <select class="modification-input time" id="timeSelect">
                                 <option value="">선택</option>
                                 <option value="time1">11:00 ~ 14:00</option>
                                 <option value="time2">14:00 ~ 17:00</option>
@@ -78,16 +59,11 @@
                     <div class="array-contents">
                         <table class="reserve-contents3">
                             <tbody>
-                                <tr> 
-                                    <th>대인</th>
-                                </tr>
-                                <tr>
-                                    <th>소인</th>
-                                </tr>
+
                             </tbody>
                         </table> 
                         <div class="select-group">
-                            <select class="modification-input adult">
+                            <select class="modification-input adult" id="adultSelect">
                                 <option value="">선택</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -96,7 +72,7 @@
                                 <option>5</option>
                                 <option>6</option>
                             </select>
-                            <select class="modification-input child">
+                            <select class="modification-input child" id="childSelect">
                                 <option value="">선택</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -127,4 +103,5 @@
     </div>
 </body>
 <script src="/static/js/modification.js"></script>
+
 </html>

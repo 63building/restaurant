@@ -1,4 +1,4 @@
-package com.koreait.restaurant.web.api.dto;
+package com.koreait.restaurant.web.dto;
 //230113
 
 import lombok.Data;
@@ -15,8 +15,6 @@ public class ResvDto {
 
     private String resvTime; //예약시간
 
-    private String resvmenu; //예약메뉴
-
     private String number; //연락처
 
     private String email;
@@ -26,4 +24,8 @@ public class ResvDto {
     private int child;
 
     private String guest;
+
+    private String request;
+
+    private String resvmenu;
 }

@@ -17,7 +17,7 @@ spring:
 
     url: jdbc:mysql://localhost:3306/restaurant
     username: root
-    password: 1q2w3e4r
+    password: q1w2e3r4
 
 file:
   path: C:\63building\upload
@@ -26,17 +26,6 @@ file:
 mybatis:
   mapper-locations:
     - /mappers/*.xml
-
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://databasepeng.cxkzclvqze2g.ap-northeast-2.rds.amazonaws.com:3306/restaurant
-#    username: admin
-#    password: 1q2w3e4r
-
-#    url: jdbc:mysql://database-1.ctnjv8rfym3f.ap-northeast-2.rds.amazonaws.com/restaurant
-#    username: admin
-#    password: dkssud1234
-#>>>>>>> origin/admin
 
 
 
