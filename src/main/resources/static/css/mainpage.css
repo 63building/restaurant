@@ -37,16 +37,19 @@
     color: black;
 }
 
+.menu01{
+    position: static;
+    vertical-align:middle;
+    width: auto;
+    
+}
+
 .img-container {
-    display: flex;
-    position: relative;
-
-    padding-left: 150px;
-    padding-top: 50px;
-
-
+    
+    margin: 20px;
     margin: 1px;
-    /* margin-left: 100px; */
+    height: auto;
+
 }
 
 .menu-img {
@@ -55,6 +58,7 @@
     width: 700px;
     height: 500px;    
 }
+
 .menu-button1 {
     border: 2px solid #E1EEDD;
     display: flex;
@@ -64,73 +68,6 @@
 
     font-size: 15px;
 }
-
-.menu-button2 {
-    border: 2px solid #E1EEDD;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 15px;
-}
-.menu-button3 {
-    border: 2px solid #E1EEDD;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 15px;
-}
-.menu-button4 {
-    border: 2px solid #E1EEDD;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 15px;
-}
-
-.menu-button5 {
-    border: 2px solid #E1EEDD;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 15px;
-}
-.menu-button6 {
-    border: 2px solid #E1EEDD;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 15px;
-}
-.menu-button7 {
-    border: 2px solid #E1EEDD;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 15px;
-}
-
-.menu-button8 {
-    border: 2px solid #E1EEDD;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 15px;
-}
-
 
 
 
@@ -171,11 +108,6 @@
     color: white;
 }
 
-.menu01{
-    display:table-cell; 
-    vertical-align:middle;
-}
-
 html{overflow: hidden;}
  
 html, body{width: 100%; height: 100%;}
@@ -199,16 +131,18 @@ html, body{width: 100%; height: 100%;}
 
 .detail {
     border: 1px solid black;
-    background-color: whitesmoke;
+    background-color: green;
+/* whitesmoke */
+    width: 100%;
 
-    width: 75%;
-    height: 90%;
-    position: absolute;
+    height: auto;
+    /* position: absolute; */
 
 }
 
 .detail-title {
     padding: 0px 25%;
+    width: 100%;
 
     font-size: 30px;
     font-weight: 5px;
@@ -216,20 +150,8 @@ html, body{width: 100%; height: 100%;}
 .umenu {
     padding-left: 30px;
     padding-top: 15px;
-    height: 50px;
 
     font-size: 25px;
 }
-
-
-.detail1, .detail3, .detail4,.detail5, .detail6, .detail7, .detail8 {
-    border: 1px solid black;
-    background-color: whitesmoke;
-
-    width: 75%;
-    height: 90%;
-    position: absolute;
-}
-
 
 

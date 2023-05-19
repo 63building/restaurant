@@ -58,10 +58,8 @@ class MenuListService {
         responseData.forEach((data) => {
             contentFlex.innerHTML += `
             <div class="menu01">
-                <div class="img-container">
-
-                    <button class="menu-button1" id="menu-button1">메뉴보기</button>
-                    <div class="content-flex-test detail">
+                <div class="img-container">                   
+                    <div class="detail">
                         <h2 class="detail-title"> ${data.titleName} </h2>
                             <ul class="umenu">
                                 <li>${data.appetizer}</li>
