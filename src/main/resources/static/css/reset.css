@@ -1,11 +1,4 @@
-html, body, div, span, 
-h1, h2, h3, 
-p, pre, 
-a, b, i, 
-ol, ul,
-form, label,
-table, tbody, tfoot, thead, tr, th, td,
-article, aside, footer, header, nav, main {
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -15,6 +8,11 @@ article, aside, footer, header, nav, main {
 html {
     line-height: 1;
     height: 100%;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 ol, ul {
