@@ -52,13 +52,12 @@ class MenuListService {
 
     loadSearchmenu(){
         const responseData = MenuListApi.getInstance().menulist();
-        const contentFlex = document.querySelector(".menu01");
+        const contentFlex = document.querySelector(".menu");
 
         console.log(responseData)
         responseData.forEach((data) => {
             contentFlex.innerHTML += `
-            <div class="menu01">
-                <div class="img-container">                   
+            <div class="menu01">                
                     <div class="detail">
                         <h2 class="detail-title"> ${data.titleName} </h2>
                             <ul class="umenu">
@@ -69,8 +68,7 @@ class MenuListService {
                                 <br>        
                                 <li>${data.price}</li>
                             </ul>
-                    </div>
-                </div>
+                    </div>                
             </div>     
             `
             
