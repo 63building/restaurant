@@ -13,9 +13,9 @@ public class Resv_CheckController {
     public String loadcheck() {
         return "/reserve_Check/check";
     }
-    @GetMapping("/input")
+    @GetMapping("/page")
     public String loadcheckPage() {
-        return "/reserve_Check/check_input";
+        return "/reserve_Check/check_page";
     }
 }
 

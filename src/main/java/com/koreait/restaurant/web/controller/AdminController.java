@@ -22,11 +22,11 @@ public class AdminController {
 
     @PostMapping("/login/error")
     public String loginError() {
-        return "/account/login_error";
+        return "/admin/admin_login_error";
     }
 
     @GetMapping("/register")
     public String register() {
-        return "/account/register";
+        return "/admin/menu_registration";
     }
 }
