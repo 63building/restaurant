@@ -1,4 +1,11 @@
-* {
+html, body, div, span, 
+h1, h2, h3, 
+p, pre, 
+a, b, i, 
+ol, ul,
+form, label,
+table, tbody, tfoot, thead, tr, th, td,
+article, aside, footer, header, nav, main {
     margin: 0;
     padding: 0;
     border: 0;
@@ -10,8 +17,7 @@ html {
     height: 100%;
 }
 
-ol,
-ul {
+ol, ul {
     list-style-type: none;
 }
 
@@ -25,8 +31,6 @@ table {
     border-spacing: 0;
 }
 
-input,
-textarea,
-select {
+input, textarea, select {
     box-sizing: border-box;
 }
