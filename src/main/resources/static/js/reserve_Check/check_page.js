@@ -5,10 +5,10 @@ window.onclick = () => {
 
 $(document).ready(function(){
 	
-	$('ul.reserve-search li').click(function(){
+	$('.select ul li').click(function(){
 		var tab_id = $(this).attr('data-tab');
 
-		$('ul.reserve-search li').removeClass('current');
+		$('.select ul li').removeClass('current');
 		$('.serve-container').removeClass('current');
 
 		$(this).addClass('current');
