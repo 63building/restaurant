@@ -14,7 +14,7 @@ public class AdminController {
         return "admin/admin_home";
     }
 
-    @RequestMapping(value = "login", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/login", method = RequestMethod.GET)
     public String loginForm(){
         System.out.println("관리자 로그인페이지 이동");
         return "admin/admin_login";

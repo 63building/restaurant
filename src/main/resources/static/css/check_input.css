@@ -1,49 +1,11 @@
-* {
-    box-sizing: border-box;
-    font-size: 14px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
   
-html,body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-  
-.header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    
-    margin: 0px;
-    border: 1cm;
-    padding: 30px 20px 40px;
-  
-    width: 100%;
-    height: 150px;
-  
-    color: white;
-    background-color: #183a1d;
-    font-size: 100px;
-}
-
-
-.home-button {
-    position: fixed;
-    left: 96%;
-    bottom: 92%;
-
-    padding-right: 50px;
-
-    color: white;
-}
-
 ::-webkit-scrollbar {
     width: 15px;
 }
 
 ::-webkit-scrollbar-track {
-    background: white;
+    background: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -55,21 +17,46 @@ html,body {
     background: #183a1d8c;
 }
 
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+    height: 150px;
+  
+    color: #fff;
+    background-color: #183a1d;
+
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.header-container p {
+    margin-left: 818.5px;
+    font-size: 90px;
+}
+
+.header-container i {
+    right: px;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    margin: 20px;
-    padding: 10px;
+    margin-top: 60px;
 }
 
 .page-title {
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
+.page-title h1 {
     font-size: 50px;
 }
 
@@ -132,35 +119,35 @@ ul.reserve-search{
     color: white;
 }
 
+.third-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .serve-container.current{
 	display: inherit;
 }
 
 .serve-container{
     display: none;
-
-    margin-top: 10px;
-    height: 350px;
     
+
+    height: 350px;
+    width: 830px;
+
     border: 1px solid #183a1d;
-    border-radius: 5px;
 }
 
-.third-container {
-    display: flex;
-    justify-content: space-between;
 
-    margin: 40px 40px 40px 150px;
-}
-
-.p-group {
+.label-group {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
-    margin: 23px 30px 25px 40px;
+    /* margin: 40px;
+    width: 100px; */
 
-    width: 100px;
     font-weight: bold;
 }
 
@@ -179,7 +166,7 @@ ul.reserve-search{
     flex-direction: column;
     justify-content: center;
 
-    margin-top: 34px;
+    height: 150px;    
 
     cursor: pointer;
 }
@@ -222,14 +209,6 @@ ul.reserve-search{
 
 .reserve-button1:hover, .reserve-button2:hover {
     background-color: #183a1d;
-}
-
-.search-group {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-
-    margin: 0px;
 }
 
 .search-number {
