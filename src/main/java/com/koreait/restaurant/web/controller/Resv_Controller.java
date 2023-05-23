@@ -4,13 +4,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 @Controller
-@RequestMapping("/update")
-public class updateController {
+@RequestMapping("/check")
+public class Resv_Controller {
+
     @GetMapping("")
-    public String updateReserveUser(){
-        return "main/update";
+    public String loadcheck() {
+        return "/reserve_Check/check";
     }
-
-
+    @GetMapping("/page")
+    public String loadcheckPage() {
+        return "/reserve_Check/check_page";
+    }
 }
+
+

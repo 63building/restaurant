@@ -1,23 +1,20 @@
 package com.koreait.restaurant.web.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @CrossOrigin
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/admin")
 public class AdminController {
 
-    @GetMapping("/home")
-    public String adminHome() {
-        return "admin/admin_home";
-    }
-
-    @RequestMapping(value = "/admin/login", method = RequestMethod.GET)
-    public String loginForm(){
-        System.out.println("관리자 로그인페이지 이동");
-        return "admin/admin_login";
+    @GetMapping("/login")
+    public String login() {
+        return "/admin/admin_login";
     }
 
     @PostMapping("/login/error")

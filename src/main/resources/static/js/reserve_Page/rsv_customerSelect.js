@@ -22,7 +22,6 @@ function selectResvTime(value){
       break;      
     }
     menuObj.meals = resvTimeRange;
-    resvObj.resvTime = resvTime;
     $('#check02').html(resvTime);
 }
 
@@ -55,7 +54,6 @@ function countRsvAdult(type){
     }
   
     count_per_adult.innerText = number_adult;  
-    resvObj.adult = number_adult;
   $('#check03').html(sumPerson);
 
 }
@@ -77,18 +75,9 @@ function countRsvChild(type){
   }
 
   count_per_child.innerText = number_child;
-  resvObj.child = number_child;
   $('#check03').html(sumPerson);
 }
 
-function select_mail(domain){
-  console.log(domain);
- 
-  document.getElementById('email_txt').value = domain;
 
-  var resvEmail = document.getElementById('email_1').value;
-  var resvdomain = document.getElementById('email_txt').value;
+/* 결제 금액 계산 */ 
 
-  resvObj.email = resvEmail + '@' + resvdomain;
-
-}
