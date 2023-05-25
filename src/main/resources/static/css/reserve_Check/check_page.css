@@ -17,10 +17,23 @@ nav {
     height: 120px;
 }
 
-nav h5 {
-    margin: 0 auto;
-    width: 70px;
+.login-button {
+    display: flex;
+}
 
+.login-button button{
+    padding: 20px;
+
+    color: #ffffff;
+    background-color: transparent;
+
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+}
+
+nav h5 {
     font-size: 50px;
 }
 
@@ -28,6 +41,8 @@ nav h5 {
     width: 70px;
 
     font-size: 14px;
+
+    cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -53,86 +68,128 @@ nav h5 {
     justify-content: center;
     align-items: center;
 
-    margin: 20px;
+    margin-top: 20px;
     padding: 10px;
+    width: 100%;
+    height: 770px;
+
+    background-image: url('/static/images/reserved w3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-background {
+    margin: 0 auto;
+
+    width: 835px;
+    height: 600px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 50px 10px 10px;
+    height: 110px;
 }
 
 .page-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 20px;
 
-    margin-bottom: 20px;
+    font-size: 40px;
+}
 
-    font-size: 50px;
+.welcome-container {
+    width: 400px;
+    
 }
 
 .title-line{
     margin: 0px;
     
-    width: 401px;
+    width: 100%;
     height: 3px;
     
-    background-color: #dddddd;
+    background-color: #183a1d;
 }
 
 .title-container p {
     padding: 2px;
     
     text-align: center;
+    font-weight: 700;
 }
 
 .select {
-    margin: 30px 0px 40px 0px;
-    width: 840px;
-    height: 42px;
-
-    background-color: #E1EEDD;
-    cursor: pointer;
+    margin: 0 auto;
+    
+    width: 700px;
+    background-color: rgba(31, 83, 37, 0.6);
 }
 
 .select ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
+.select ul li {
+    padding: 12px 10px 10px;
+    
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+
+    cursor: pointer;
 }
 
 .reserve-change {
     display: inline-block;
     
     margin: 0;
-    padding: 10px;
     width: 420px;
-    
-    border: 1px solid #dbdbdb;
+    height: 42px;
 
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+}
+
+#tap-menu {
+    border-right: 1px solid #ccc;
 }
 
 .reserve-change:hover {
-    background-color: #434242;
     color: white;
+    background-color: #434242;
 }
 
-.serve-container.current{
-	display: inherit;
+.tab-container {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 5px;
 }
 
 .serve-container{
     display: none;
     justify-content: center;
 
-    width: 835px;
-    height: 400px;
+    width: 700px;
+    height: 300px;
     
-    border: 1px solid #183a1d;
+    border: 1px solid #333;
     border-radius: 5px;
+
 }
 
-.third-container {
+.serve-container.current{
+	display: inherit;
+}
+
+.input-container {
     display: flex;
     justify-content: space-between;
 
@@ -147,6 +204,7 @@ nav h5 {
     width: 100px;
     font-weight: bold;
 }
+
 .number-telephone {
     margin: 10px;
     height: 20px;
@@ -196,10 +254,11 @@ nav h5 {
     height: 90px;
 
     border-radius: 3px;
-    font-size: 18px;
-    font-weight: bold;
     color: white;
     background-color: #434242;
+
+    font-size: 18px;
+    font-weight: bold;
 
     cursor: pointer;
 }
@@ -215,8 +274,3 @@ nav h5 {
     font-size: 15px;
     color: #a39e9e;
 }
-
-
-
-
-

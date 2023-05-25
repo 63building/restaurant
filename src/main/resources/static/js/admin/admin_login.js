@@ -15,7 +15,7 @@ class LoginApi {
         $.ajax({
             async: false,
             type: "post",
-            url: "/api/account/login",
+            url: "http://localhost:8000/api/admin/reservation/{reserveName}",
             contentType: "application/json",
             data: JSON.stringify(user),
             dataType: "json",

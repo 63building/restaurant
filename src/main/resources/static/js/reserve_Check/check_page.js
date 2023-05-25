@@ -1,4 +1,5 @@
 window.onclick = () => {
+    ComponentEvent.getInstance().addClickEventLoginButton();
     ComponentEvent.getInstance().addClickEventReserveButton1();
     ComponentEvent.getInstance().addClickEventReserveButton2();
 }
@@ -56,6 +57,14 @@ class ComponentEvent {
         }
         return this.#instance;
     }
+
+    addClickEventLoginButton() {
+        const loginButton = document.querySelector(".login-button button");
+
+        loginButton.onclick = () => {
+            location.href = `http://localhost:8000/admin/login`;
+        }
+    }
     
     addClickEventReserveButton1() {
         const reserveButton1 = document.querySelector(".reserve-button1");
@@ -70,27 +79,33 @@ class ComponentEvent {
 
             if(reserveIdValue1 && numberValue !=  null) {
                 location.href = `http://localhost:8000/check?reserveId=${reserveIdValue1}&number=${numberValue}`;
-            } 
+            } else {
+                alert("빈칸 없이 입력해주세요.");
+            }
            
             ReservePageApi.getInstance().getReserveNumberPage(checkReserve);
+
+            
         }
     }
-
+    
     addClickEventReserveButton2() {
         const reserveButton2 = document.querySelector(".reserve-button2");
-
+        
         reserveButton2.onclick = () => {
             const reserveIdValue1 = document.querySelectorAll(".input-contents")[0].value;
             const numberValue = document.querySelectorAll(".input-contents")[1].value;
             const reserveIdValue2 = document.querySelectorAll(".input-contents")[2].value;
             const reserveNameValue = document.querySelectorAll(".input-contents")[3].value;
-    
+            
             const checkReserve = new CheckReserve(reserveIdValue1, numberValue, reserveIdValue2, reserveNameValue);
-
+            
             if(reserveIdValue2 && reserveNameValue != null) {
                 location.href = `http://localhost:8000/check?reserveId=${reserveIdValue2}&Name=${reserveNameValue}`;
+            } else {
+                alert("빈칸 없이 입력해주세요.");
             }
-            ReservePageApi.getInstance().getReserveNumberPage(checkReserve);
+
         }
     }
 }
