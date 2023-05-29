@@ -1,8 +1,8 @@
 package com.koreait.restaurant.web.api.reserve_Main_Update;
 
-import com.koreait.restaurant.service.MenuListService;
+import com.koreait.restaurant.service.reserve_Main_Update.MenuListService;
 import com.koreait.restaurant.web.dto.CMRespDto;
-import com.koreait.restaurant.web.dto.MenuListDto;
+import com.koreait.restaurant.web.dto.reserve_Main_Update.MenuListDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

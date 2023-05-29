@@ -17,8 +17,7 @@ const Modifyvalue = {
 	date : "",
 	time : "",
 	adult : "",
-	child : "",
-	resquest : ""
+	child : ""
 }
 
 /*localStorage.setItem에서 준 값을 localStorage.getItem 으로 오는 값을 받음 -> 39, 126줄로 이동*/
@@ -65,7 +64,7 @@ class ModificationApi {
         $.ajax({
             async: false,
             type: "put",
-            url: `http://localhost:8000/api/user/${checkObj.reserveId}`,
+            url: `/api/user/${checkObj.reserveId}`,
             contentType: "application/json",
             data: JSON.stringify(checkObj),
             dataType: "json",
