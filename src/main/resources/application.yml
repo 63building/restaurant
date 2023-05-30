@@ -20,7 +20,7 @@ spring:
     password: 1q2w3e4r
 
 file:
-  path: C:\63building\upload
+  path: E:/예희/웹개발/git clone/HOTSIX Project/upload
 
 
 mybatis:

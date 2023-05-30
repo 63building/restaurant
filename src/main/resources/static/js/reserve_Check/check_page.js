@@ -24,7 +24,7 @@ class ReservePageApi {
 		if(this.#instance == null) {
 			this.#instance = new ReservePageApi();
 		}
-		return this.#instance();
+		return this.#instance;
 	}
 
     
@@ -77,11 +77,9 @@ class ComponentEvent {
        
             const checkReserve = new CheckReserve(reserveIdValue1, numberValue, reserveIdValue2, reserveNameValue);
 
-            if(reserveIdValue1 && numberValue !=  null) {
+            if((reserveIdValue1 != null) && (numberValue !=  null)) {
                 location.href = `http://localhost:8000/check?reserveId=${reserveIdValue1}&number=${numberValue}`;
-            } else {
-                alert("빈칸 없이 입력해주세요.");
-            }
+            } 
            
             ReservePageApi.getInstance().getReserveNumberPage(checkReserve);
 
@@ -100,10 +98,8 @@ class ComponentEvent {
             
             const checkReserve = new CheckReserve(reserveIdValue1, numberValue, reserveIdValue2, reserveNameValue);
             
-            if(reserveIdValue2 && reserveNameValue != null) {
+            if((reserveIdValue2 != null) && (reserveNameValue != null)) {
                 location.href = `http://localhost:8000/check?reserveId=${reserveIdValue2}&Name=${reserveNameValue}`;
-            } else {
-                alert("빈칸 없이 입력해주세요.");
             }
 
         }

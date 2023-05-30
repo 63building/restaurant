@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.koreait.restaurant.repository.ReservationRepository">
+<mapper namespace="com.koreait.restaurant.repository.admin.ReservationRepository">
     <select id="getReservationTotalCount"
-            parameterType="com.koreait.restaurant.web.dto.SearchNumberListReqDto"
+            parameterType="com.koreait.restaurant.web.dto.admin.SearchNumberListReqDto"
             resultType="Integer">
         select
             count(*)
@@ -21,7 +21,7 @@
         </if>
     </select>
 
-    <select id="searchReservation" parameterType="com.koreait.restaurant.web.dto.SearchReqDto" resultType="com.koreait.restaurant.entity.admin.ReservationMst">
+    <select id="searchReservation" parameterType="com.koreait.restaurant.web.dto.admin.SearchReqDto" resultType="com.koreait.restaurant.entity.admin.ReservationMst">
         SELECT
             reserve_id as reserveId,
             reserve_name as reserveName,
@@ -75,13 +75,13 @@
             reserve_name = #{reserveName};
     </select>
 
-    <insert id="saveReserve" parameterType="com.koreait.restaurant.web.dto.ReservationReqDto">
+    <insert id="saveReserve" parameterType="com.koreait.restaurant.web.dto.admin.ReservationReqDto">
         insert into dinning_mst
         values
             (0, #{reserveName}, #{reserveDate}, #{reserveTime}, #{number}, #{email}, #{adult}, #{child}, #{guest}, #{request})
     </insert>
 
-    <update id="updateReserveByReserveName" parameterType="com.koreait.restaurant.web.dto.ReservationReqDto">
+    <update id="updateReserveByReserveName" parameterType="com.koreait.restaurant.web.dto.admin.ReservationReqDto">
         update dinning_mst
         set
             reserve_name = #{reserveName}
@@ -97,7 +97,7 @@
             reserve_name = #{reserveName}
     </update>
 
-    <update id="maintainUpdateReserveByReserveName" parameterType="com.koreait.restaurant.web.dto.ReservationReqDto">
+    <update id="maintainUpdateReserveByReserveName" parameterType="com.koreait.restaurant.web.dto.admin.ReservationReqDto">
         update dinning_mst
         set
             reserve_name = #{reserveName}

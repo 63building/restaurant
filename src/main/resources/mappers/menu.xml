@@ -3,10 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.koreait.restaurant.repository.MenuRepository">
+<mapper namespace="com.koreait.restaurant.repository.admin.MenuRepository">
 
     <select id="getMenuTotalCount"
-            parameterType="com.koreait.restaurant.web.dto.SearchNumberListReqDto"
+            parameterType="com.koreait.restaurant.web.dto.admin.SearchNumberListReqDto"
             resultType="Integer">
         select
             count(*)
@@ -21,7 +21,7 @@
         </if>
     </select>
 
-    <select id="searchMenu" parameterType="com.koreait.restaurant.web.dto.SearchReqDto" resultType="com.koreait.restaurant.entity.admin.MenuMst">
+    <select id="searchMenu" parameterType="com.koreait.restaurant.web.dto.admin.SearchReqDto" resultType="com.koreait.restaurant.entity.admin.MenuMst">
         SELECT
             menu_id as menuId,
             menu_code as menuCode,
@@ -65,13 +65,13 @@
             menu_code = #{menuCode};
     </select>
 
-    <insert id="saveMenu" parameterType="com.koreait.restaurant.web.dto.MenuReqDto">
+    <insert id="saveMenu" parameterType="com.koreait.restaurant.web.dto.admin.MenuReqDto">
         insert into admin_menu
         values
         (0, #{menuCode}, #{menuName}, #{day}, #{meals}, #{menuAge1}, #{menuAge2}, #{salesPride}, #{explanation})
     </insert>
 
-    <update id="updateMenuByMenuCode" parameterType="com.koreait.restaurant.web.dto.MenuReqDto">
+    <update id="updateMenuByMenuCode" parameterType="com.koreait.restaurant.web.dto.admin.MenuReqDto">
         update admin_menu
         set
             menu_name = #{menuName},
@@ -85,7 +85,7 @@
             menu_code = #{menuCode}
     </update>
 
-    <update id="maintainUpdateMenuByMenuCode" parameterType="com.koreait.restaurant.web.dto.MenuReqDto">
+    <update id="maintainUpdateMenuByMenuCode" parameterType="com.koreait.restaurant.web.dto.admin.MenuReqDto">
         update admin_menu
         set
             menu_name = #{menuName},

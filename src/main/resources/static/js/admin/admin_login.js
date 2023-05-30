@@ -14,7 +14,7 @@ class LoginApi {
     login(admin) {
         $.ajax({
             async: false,
-            type: "post",
+            type: "get",
             url: "http://localhost:8000/api/admin/reservation/{reserveName}",
             contentType: "application/json",
             data: JSON.stringify(user),
@@ -22,7 +22,7 @@ class LoginApi {
             success: response => {
                 console.log(response);
                 alert("로그인 성공. 관리자 페이지로 이동합니다.");
-                location.replace("/templates/admin/login_home");
+                location.replace("/templates/admin/admin_main_page");
             },
             error: error => {
                 console.log(error);
