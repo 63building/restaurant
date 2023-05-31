@@ -24,8 +24,8 @@
             dinning_mst
 
         where
-            reserve_id = 1
-        and number = '010-1111-4444'
+            reserve_id = {reserveId}
+        and number = {reserveName}
     </select>
 
     <update id="updateUser"

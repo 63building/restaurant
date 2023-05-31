@@ -82,19 +82,8 @@ class updateService {
         
         const getContent = document.querySelectorAll(".modification-input");
         const reserveDate = updateApi.getInstance().getUser();
-        // modification-input -> getContent[i]
-
+      
         console.log(getContent);
-
-        getContent[0].value = reserveDate.dinningMst.reserveName;
-        // getContent[1].value = reserveDate.reserveDate;
-        // getContent[2].value = reserveDate.updateEntity.reserveTime;
-        // getContent[3].value = reserveDate.updateEntity.adult;
-        // getContent[4].value = reserveDate.updateEntity.child;
-        // getContent[5].value = reserveDate.updateEntity.menu;
-        // getContent[6].value = reserveDate.updateEntity.number;
-        // getContent[7].value = reserveDate.updateEntity.email;
-        // getContent[8].value = UserObj.request;
 
     }
 }

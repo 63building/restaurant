@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class updateController {
     @GetMapping("")
     public String updateReserveUser(){
-        return "main/update";
+        return "main_Update_Page/modification";
     }
 
 
