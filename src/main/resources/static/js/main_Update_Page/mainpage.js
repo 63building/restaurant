@@ -57,7 +57,7 @@ class MenuListService {
         console.log(responseData)
         responseData.forEach((data) => {
             contentFlex.innerHTML += `
-            <div class="menu01">                
+            <div class="menu-container">                
                     <div class="detail">
                         <h2 class="detail-title"> ${data.titleName} </h2>
                             <ul class="umenu">
