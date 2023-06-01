@@ -16,7 +16,7 @@
         <if test='searchValue != null and searchValue != ""'>
             and (
             reserve_name like CONCAT('%', #{searchValue}, '%')
-            or	email like CONCAT('%', #{searchValue}, '%')
+            or email like CONCAT('%', #{searchValue}, '%')
             )
         </if>
     </select>
