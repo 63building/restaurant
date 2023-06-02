@@ -5,10 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>메뉴 등록 페이지</title>
-<<<<<<< HEAD
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-=======
->>>>>>> origin/BookCh&main
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,15 +13,16 @@
         <link rel="stylesheet" href="/static/css/admin/admin_common.css">
         <link rel="stylesheet" href="/static/css/admin/left_aside.css">
         <link rel="stylesheet" href="/static/css/admin/menu_registration.css">
-        <link rel="stylesheet" href="/static/css/admin/reset.css">
+        <link rel="stylesheet" href="/static/css/reset.css">
+        <link rel="shortcut icon" href="/static/images/favicon.png" type="image/x-icon">
     </head>
 <body>
 <div id="container">
     <header class="header-container">
-        <h1 class="admin-logo"><a href="/templates/admin/admin_home.html"><i class="fa-solid fa-utensils"></i></a></h1>
+        <h1 class="admin-logo"><a href="http://localhost:8000/admin/main"><i class="fa-solid fa-utensils"></i></a></h1>
         <h1 class="store">HotSix</h1>
         <ul class="menu-login">
-            <li><a href="/templates/admin/admin_login.html">로그인</a></li>
+            <li><a href="admin_login.html">로그아웃</a></li>
         </ul>
     </header>
 
@@ -33,15 +31,19 @@
             <h1 class="hotsix">HotSix</h1>
         </div>
         <nav class="main-menu">
-            <h2 class="menu-menu">☆예약관리☆</h2>
-            <ul class="sub-menu">
-                <a href="/templates/admin/reservation_management.html"><li>예약정보 조회</li></a>
-            </ul>
-            <h2 class="menu-menu">☆MENU☆</h2>
-            <ul class="sub-menu">
-                <a href="/templates/admin/menu_management.html"><li>메뉴 관리</li></a>
-                <a href="/templates/admin/menu_registration.html"><li>메뉴 등록</li></a>
-            </ul>
+            <div class="menu-first-container menu-menu">
+                <h2>☆예약관리☆</h2>
+                <ul class="sub-menu">
+                    <li class="reservation-management menu">예약정보 조회</li>
+                </ul>
+            </div>
+            <div class="menu-second-container menu-menu">
+                <h2>☆MENU☆</h2>
+                <ul class="sub-menu">
+                    <li class="menu-management menu">메뉴 관리</li>
+                    <li class="menu-registration menu">메뉴 등록</li>
+                </ul>
+            </div>
         </nav>
     </aside>
 
@@ -59,25 +61,16 @@
                         <div class="error-message"></div>
                     </div>
                     <div class="item-group">
-<<<<<<< HEAD
                         <label class="register-label">메뉴이름 </label>
-=======
-                        <label class="register-label">메뉴이름: </label>
->>>>>>> origin/BookCh&main
                         <input type="text" class="register-input">
                         <div class="error-message"></div>
                     </div>
                     <div class="item-group">
-<<<<<<< HEAD
                         <label class="register-label">요일 </label>
-=======
-                        <label class="register-label">대인: </label>
->>>>>>> origin/BookCh&main
                         <input type="text" class="register-input">
                         <div class="error-message"></div>
                     </div>
                     <div class="item-group">
-<<<<<<< HEAD
                         <label class="register-label">식사 시간 </label>
                         <input type="text" class="register-input">
                         <div class="error-message"></div>
@@ -89,9 +82,6 @@
                     </div>
                     <div class="item-group">
                         <label class="register-label">소인 </label>
-=======
-                        <label class="register-label">소인: </label>
->>>>>>> origin/BookCh&main
                         <input type="text" class="register-input">
                         <div class="error-message"></div>
                     </div>
@@ -103,14 +93,6 @@
                         </select>
                         <div class="error-message"></div>
                     </div>
-<<<<<<< HEAD
-                    <div class="item-group">
-                        <label class="register-label">상세설명 </label>
-                        <input type="text" class="register-input">
-                        <div class="error-message"></div>
-                    </div>
-=======
->>>>>>> origin/BookCh&main
                     <button class="register-button">등록하기</button>
                 </div>
                 <div class="content-right">
@@ -130,8 +112,5 @@
         </div>
     </main>
 </body>
-<<<<<<< HEAD
 <script src="/static/js/admin/menu_register.js"></script>
-=======
->>>>>>> origin/BookCh&main
 </html>

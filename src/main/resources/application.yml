@@ -17,15 +17,14 @@ spring:
 
     url: jdbc:mysql://localhost:3306/restaurant
     username: root
-    password: q1w2e3r4
+    password: 1q2w3e4r
 
 file:
-  path: C:/Users/iiuuy/문서/restaurant/upload/
+  path: E:/예희/웹개발/git clone/HOTSIX Project/upload
 
 
 mybatis:
   mapper-locations:
-    - /mappers/*.xml
-
+    - /mappers/**/*.xml
 
 
