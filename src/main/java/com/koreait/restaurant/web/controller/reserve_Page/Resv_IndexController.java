@@ -7,7 +7,7 @@ public class Resv_IndexController {
 
     @GetMapping("/resv")
     public String reserv() {
-        return "resv";
+        return "reserve_Page/resv";
     }
 
 

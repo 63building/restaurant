@@ -4,19 +4,51 @@
 
     color: white;
     background-color: #183a1d;
+<<<<<<< HEAD
 
     font-size: 100px;
     font-family: 'Pacifico', cursive;
 }
 
+=======
+
+    font-size: 100px;
+    font-family: 'Pacifico', cursive;
+}
+
+<<<<<<< HEAD
+
+#home{
+    position: fixed;
+    left: 96%;
+    bottom: 92%;
+=======
+>>>>>>> origin/Reserve
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD
+=======
+>>>>>>> origin/BookCheck&Cancle
+>>>>>>> origin/Reserve
 
     height: 120px;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    color: white;
+
+}
+
+/* 스크롤 적용 버튼*/
+#home.active{
+    background: transparent;
+    color: black;
+=======
+>>>>>>> origin/Reserve
 nav h5 {
     margin: 0 auto;
     width: 70px;
@@ -28,6 +60,10 @@ nav h5 {
     width: 70px;
 
     font-size: 14px;
+<<<<<<< HEAD
+=======
+>>>>>>> origin/BookCheck&Cancle
+>>>>>>> origin/Reserve
 }
 
 ::-webkit-scrollbar {

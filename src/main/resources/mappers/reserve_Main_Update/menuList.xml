@@ -3,7 +3,15 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<<<<<<< HEAD
 <mapper namespace="com.koreait.restaurant.repository.admin.MenuRepository">
+=======
+<<<<<<< HEAD
+<mapper namespace="com.koreait.restaurant.repository.reserve_Main_Update.MenuRepository">
+=======
+<mapper namespace="com.koreait.restaurant.repository.admin.MenuRepository">
+>>>>>>> origin/BookCheck&Cancle
+>>>>>>> origin/Reserve
     <select id="getMenuList"
             resultType="com.koreait.restaurant.web.dto.reserve_Main_Update.MenuListDto">
         select

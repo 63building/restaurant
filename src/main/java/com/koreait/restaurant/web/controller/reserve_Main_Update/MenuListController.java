@@ -10,7 +10,7 @@ public class MenuListController {
 
     @GetMapping("/menulist")
     public String menuList(){
-        return "main/mainpage";
+        return "main_Update_Page/mainpage";
     }
 
 }

@@ -16,9 +16,10 @@ public class UpdateApi {
     @Autowired
     private UpdateService updateService;
 
-    @PutMapping("user/{reserveId}")
+    @PutMapping("/user/{reserveId}")
     public ResponseEntity<CMRespDto<?>> modifyUser(@PathVariable String reserveId, @RequestBody UpdateUseReqDto updateUseReqDto) {
         updateService.modifyReserve(updateUseReqDto);
+        System.out.println(updateUseReqDto);
         return ResponseEntity
                 .ok()
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "successfully", true));
