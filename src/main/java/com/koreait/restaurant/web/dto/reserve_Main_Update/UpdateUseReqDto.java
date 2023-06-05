@@ -1,13 +1,18 @@
 package com.koreait.restaurant.web.dto.reserve_Main_Update;
 
+<<<<<<< HEAD
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+=======
+import lombok.Data;
+>>>>>>> origin/BookCheck&Cancle
 
 import java.util.Date;
 
 
+<<<<<<< HEAD
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,4 +27,14 @@ public class UpdateUseReqDto {
     private int child;
 
 
+=======
+@Data
+public class UpdateUseReqDto {
+
+    private String reserveTime;
+    private int adult;
+    private int child;
+    private Date reserveDate;
+    private String menu;
+>>>>>>> origin/BookCheck&Cancle
 }

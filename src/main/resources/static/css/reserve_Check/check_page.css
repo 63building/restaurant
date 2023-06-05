@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     box-sizing: border-box;
     font-size: 14px;
@@ -36,6 +37,53 @@ html,body {
     padding-right: 50px;
 
     color: white;
+=======
+.header-container {
+    width: 100%;
+    height: 120px;
+
+    color: white;
+    background-color: #183a1d;
+
+    font-size: 100px;
+    font-family: 'Pacifico', cursive;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 120px;
+}
+
+.login-button {
+    display: flex;
+}
+
+.login-button button{
+    padding: 20px;
+
+    color: #ffffff;
+    background-color: transparent;
+
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+}
+
+nav h5 {
+    font-size: 50px;
+}
+
+.home-button {
+    width: 70px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+>>>>>>> origin/BookCheck&Cancle
 }
 
 ::-webkit-scrollbar {
@@ -61,6 +109,7 @@ html,body {
     justify-content: center;
     align-items: center;
 
+<<<<<<< HEAD
     margin: 20px;
     padding: 10px;
 }
@@ -112,10 +161,91 @@ ul.reserve-search{
 
 	margin: 0px;
 	padding: 0px;
+=======
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 770px;
+
+    background-image: url('/static/images/reserved w3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-background {
+    margin: 0 auto;
+
+    width: 835px;
+    height: 600px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 50px 10px 10px;
+    height: 110px;
+}
+
+.page-title {
+    margin: 20px;
+
+    font-size: 40px;
+}
+
+.welcome-container {
+    width: 400px;
+    
+}
+
+.title-line{
+    margin: 0px;
+    
+    width: 100%;
+    height: 3px;
+    
+    background-color: #183a1d;
+}
+
+.title-container p {
+    padding: 2px;
+    
+    text-align: center;
+    font-weight: 700;
+}
+
+.select {
+    margin: 0 auto;
+    
+    width: 700px;
+    background-color: rgba(31, 83, 37, 0.6);
+}
+
+.select ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select ul li {
+    padding: 12px 10px 10px;
+    
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+
+    cursor: pointer;
+>>>>>>> origin/BookCheck&Cancle
 }
 
 .reserve-change {
     display: inline-block;
+<<<<<<< HEAD
 
     margin: 1px;
     padding-bottom: 5px;
@@ -130,12 +260,48 @@ ul.reserve-search{
 .reserve-change:hover {
     background-color: #434242;
     color: white;
+=======
+    
+    margin: 0;
+    width: 420px;
+    height: 42px;
+
+}
+
+#tap-menu {
+    border-right: 1px solid #ccc;
+}
+
+.reserve-change:hover {
+    color: white;
+    background-color: #434242;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 5px;
+}
+
+.serve-container{
+    display: none;
+    justify-content: center;
+
+    width: 700px;
+    height: 300px;
+    
+    border: 1px solid #333;
+    border-radius: 5px;
+
+>>>>>>> origin/BookCheck&Cancle
 }
 
 .serve-container.current{
 	display: inherit;
 }
 
+<<<<<<< HEAD
 .serve-container{
     display: none;
 
@@ -151,6 +317,13 @@ ul.reserve-search{
     justify-content: space-between;
 
     margin: 40px 40px 40px 150px;
+=======
+.input-container {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 40px;
+>>>>>>> origin/BookCheck&Cancle
 }
 
 .p-group {
@@ -158,18 +331,33 @@ ul.reserve-search{
     flex-direction: column;
     justify-content: center;
 
+<<<<<<< HEAD
     margin: 23px 30px 25px 40px;
 
+=======
+>>>>>>> origin/BookCheck&Cancle
     width: 100px;
     font-weight: bold;
 }
 
+<<<<<<< HEAD
+=======
+.number-telephone {
+    margin: 10px;
+    height: 20px;
+}
+
+>>>>>>> origin/BookCheck&Cancle
 .reserve-number1, .reserve-number2 {
     font-size: 20px;
 }
 
 .number-telephone1, .number-telephone2 {
+<<<<<<< HEAD
     margin: 15px 0px;
+=======
+    margin: 15px;
+>>>>>>> origin/BookCheck&Cancle
 
     font-size: 20px;
 }
@@ -179,12 +367,16 @@ ul.reserve-search{
     flex-direction: column;
     justify-content: center;
 
+<<<<<<< HEAD
     margin-top: 34px;
+=======
+>>>>>>> origin/BookCheck&Cancle
 
     cursor: pointer;
 }
 
 .input-contents {
+<<<<<<< HEAD
     cursor: pointer;
 }
 
@@ -197,6 +389,17 @@ ul.reserve-search{
 .reserve-number {
     margin-bottom: 20px;
 }
+=======
+    margin: 10px;
+    padding: 5px;
+    height: 25px;
+
+    border: 1px solid #dbdbdb;
+
+    cursor: pointer;
+}
+
+>>>>>>> origin/BookCheck&Cancle
 
 .main-button {
     display: flex;
@@ -212,11 +415,20 @@ ul.reserve-search{
     height: 90px;
 
     border-radius: 3px;
+<<<<<<< HEAD
     font-size: 18px;
     font-weight: bold;
     color: white;
     background-color: #434242;
 
+=======
+    color: white;
+    background-color: #434242;
+
+    font-size: 18px;
+    font-weight: bold;
+
+>>>>>>> origin/BookCheck&Cancle
     cursor: pointer;
 }
 
@@ -224,6 +436,7 @@ ul.reserve-search{
     background-color: #183a1d;
 }
 
+<<<<<<< HEAD
 .search-group {
     display: flex;
     flex-wrap: wrap;
@@ -232,15 +445,21 @@ ul.reserve-search{
     margin: 0px;
 }
 
+=======
+>>>>>>> origin/BookCheck&Cancle
 .search-number {
     margin: 40px 5px 0px 40px;
     padding: 10px;
 
     font-size: 15px;
     color: #a39e9e;
+<<<<<<< HEAD
 }
 
 
 
 
 
+=======
+}
+>>>>>>> origin/BookCheck&Cancle
