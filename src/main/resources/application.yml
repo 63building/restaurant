@@ -20,13 +20,11 @@ spring:
     password: 1q2w3e4r
 
 file:
-  path: E:/예희/웹개발/git clone/HOTSIX Project/upload
+  path: D:/wyh/hotsix project/upload/menu
 
 
 mybatis:
   mapper-locations:
-    - /mappers/*.xml
-
-
+    - /mappers/**/*.xml
 
 

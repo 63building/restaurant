@@ -23,7 +23,6 @@
             parameterType="com.koreait.restaurant.web.dto.admin.SearchMenuReqDto"
             resultType="com.koreait.restaurant.entity.admin.SearchMenuMst">
         select
-            am.menu_id as menuId,
             am.menu_code as menuCode,
             am.menu_name as menuName,
             am.day,

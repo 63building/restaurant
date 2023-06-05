@@ -27,9 +27,6 @@ public class MenuReqDto {
 //    @ApiModelProperty(value = "상시/한정", example = "상시")
     private String salesPride;
 
-//    @ApiModelProperty(value = "설명", example = "", required = true)
-    private String explanation;
-
 }
 
 

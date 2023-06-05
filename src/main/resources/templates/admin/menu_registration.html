@@ -34,14 +34,14 @@
             <div class="menu-first-container menu-menu">
                 <h2>☆예약관리☆</h2>
                 <ul class="sub-menu">
-                    <li class="reservation-management menu">예약정보 조회</li>
+                    <li class="reservation-management menu"><a href="http://localhost:8000/admin/reservation/management">예약정보 조회</a></li>
                 </ul>
             </div>
             <div class="menu-second-container menu-menu">
                 <h2>☆MENU☆</h2>
                 <ul class="sub-menu">
-                    <li class="menu-management menu">메뉴 관리</li>
-                    <li class="menu-registration menu">메뉴 등록</li>
+                    <li class="menu-management menu"><a href="http://localhost:8000/admin/menu/management">메뉴 관리</a></li>
+                    <li class="menu-registration menu"><a href="http://localhost:8000/admin/register">메뉴 등록</a></li>
                 </ul>
             </div>
         </nav>
@@ -55,11 +55,11 @@
         <div class="content-container">
             <div class="content-main">
                 <div class="content-left">
-                    <div class="item-group">
+                    <!-- <div class="item-group">
                         <label class="register-label">메뉴 코드</label>
                         <input type="text" class="register-input">
                         <div class="error-message"></div>
-                    </div>
+                    </div> -->
                     <div class="item-group">
                         <label class="register-label">메뉴이름 </label>
                         <input type="text" class="register-input">
@@ -88,14 +88,9 @@
                     <div class="item-group">
                         <label class="register-label">분류</label>
                         <select class="register-input category-select">
-                            <option value="all">상시</option>
-                            <option value="minute">한정</option>
+                            <option value="상시">상시</option>
+                            <option value="한정">한정</option>
                         </select>
-                        <div class="error-message"></div>
-                    </div>
-                    <div class="item-group">
-                        <label class="register-label">상세설명 </label>
-                        <input type="text" class="register-input">
                         <div class="error-message"></div>
                     </div>
                     <button class="register-button">등록하기</button>
@@ -117,6 +112,5 @@
         </div>
     </main>
 </body>
-<script src="/static/js/admin/left_aside.js"></script>
 <script src="/static/js/admin/menu_register.js"></script>
 </html>

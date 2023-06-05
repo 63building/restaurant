@@ -7,14 +7,13 @@ window.onload = () => {
 }
 
 const menuObj = {
-    menuCode: "",
+    // menuCode: "",
     menuName: "",
     day: "",
     meals: "",
     menuAge1: "",
     menuAge2: "",
-    salesPride: "",
-    explanation: ""
+    salesPride: ""
 }
 
 const fileObj = {
@@ -60,7 +59,7 @@ class MenuRegisterApi {
         $.ajax({
             async: false,
             type: "post",
-            url: `http://localhost:8000/api/admin/menu/${menuObj.menuCode}/images`,
+            url: `http://localhost:8000/api/admin/menu/${menuObj.menuName}/images`,
             encType: "multipart/form-data",
             contentType: false,
             processData: false,
@@ -90,14 +89,13 @@ class MenuRegisterService {
     setMenuObjValues() {
         const registerInputs = document.querySelectorAll(".register-input");
 
-        menuObj.menuCode = registerInputs[0].value;
-        menuObj.menuName = registerInputs[1].value;
-        menuObj.day = registerInputs[2].value;
-        menuObj.meals = registerInputs[3].value;
-        menuObj.menuAge1 = registerInputs[4].value;
-        menuObj.menuAge2 = registerInputs[5].value;
-        menuObj.salesPride = registerInputs[6].value;
-        menuObj.explanation = registerInputs[7].value;
+        // menuObj.menuCode = registerInputs[0].value;
+        menuObj.menuName = registerInputs[0].value;
+        menuObj.day = registerInputs[1].value;
+        menuObj.meals = registerInputs[2].value;
+        menuObj.menuAge1 = registerInputs[3].value;
+        menuObj.menuAge2 = registerInputs[4].value;
+        menuObj.salesPride = registerInputs[5].value;
     }
 
     setErrors(errors) {
@@ -105,22 +103,18 @@ class MenuRegisterService {
         this.clearErrors();
 
         Object.keys(errors).forEach(key => {
-            if(key == "menuCode") {
+            if(key == "menuName") {
                 errorMessages[0].innerHTML = errors[key];
-            }else if(key == "menuName") {
-                errorMessages[1].innerHTML = errors[key];
             }else if(key == "day") {
-                errorMessages[2].innerHTML = errors[key];
+                errorMessages[1].innerHTML = errors[key];
             }else if(key == "meals") {
-                errorMessages[3].innerHTML = errors[key];
+                errorMessages[2].innerHTML = errors[key];
             }else if(key == "menuAge1") {
-                errorMessages[4].innerHTML = errors[key];
+                errorMessages[3].innerHTML = errors[key];
             }else if(key == "menuAge2") {
-                errorMessages[5].innerHTML = errors[key];
+                errorMessages[4].innerHTML = errors[key];
             }else if(key == "salesPride") {
-                errorMessages[6].innerHTML = errors[key];
-            }else if(key == "explanation") {
-                errorMessages[7].innerHTML = errors[key];
+                errorMessages[5].innerHTML = errors[key];
             }
         })
     }
@@ -247,4 +241,5 @@ class ComponentEvent {
             }
         }
     }
+
 }

@@ -24,15 +24,13 @@
 
     <select id="searchMenu" parameterType="com.koreait.restaurant.web.dto.admin.SearchReqDto" resultType="com.koreait.restaurant.entity.admin.MenuMst">
         SELECT
-            menu_id as menuId,
             menu_code as menuCode,
             menu_name as menuName,
             day,
             meals,
             menu_age1 as menuAge1,
             menu_age2 as menuAge2,
-            sales_pride as salesPride,
-            explanation
+            sales_pride as salesPride
         from
             admin_menu
         where
@@ -43,7 +41,7 @@
             )
         </if>
         order by
-            menuId
+            menu_code
         <if test='limit == "Y"'>
             limit #{index}, #{count}
         </if>
@@ -51,15 +49,13 @@
 
     <select id="findMenuByMenuCode" resultType="com.koreait.restaurant.entity.admin.MenuMst">
         SELECT
-            menu_id as menuId,
             menu_code as menuCode,
             menu_name as menuName,
             day,
             meals,
             menu_age1 as menuAge1,
             menu_age2 as menuAge2,
-            sales_pride as salesPride,
-            explanation
+            sales_pride as salesPride
         from
             admin_menu
         where
@@ -69,33 +65,33 @@
     <insert id="saveMenu" parameterType="com.koreait.restaurant.web.dto.admin.MenuReqDto">
         insert into admin_menu
         values
-        (0, #{menuCode}, #{menuName}, #{day}, #{meals}, #{menuAge1}, #{menuAge2}, #{salesPride}, #{explanation})
+        (0, #{menuName}, #{day}, #{meals}, #{menuAge1}, #{menuAge2}, #{salesPride})
     </insert>
 
     <update id="updateMenuByMenuCode" parameterType="com.koreait.restaurant.web.dto.admin.MenuReqDto">
-        update admin_menu
+        update
+            admin_menu
         set
             menu_name = #{menuName},
             day = #{day},
             meals = #{meals},
             menu_age1 = #{menuAge1},
             menu_age2 = #{menuAge2},
-            sales_pride = #{salesPride},
-            explanation = if(#{explanation} = '', null, #{explanation})
+            sales_pride = #{salesPride}
         where
             menu_code = #{menuCode}
     </update>
 
     <update id="maintainUpdateMenuByMenuCode" parameterType="com.koreait.restaurant.web.dto.admin.MenuReqDto">
-        update admin_menu
+        update
+            admin_menu
         set
             menu_name = #{menuName},
-            day = #{day},
+        day = #{day},
             meals = #{meals},
             menu_age1 = #{menuAge1},
             menu_age2 = #{menuAge2},
-            sales_pride = #{salesPride},
-            <if test='explanation != null'>explanation = #{explanation},</if>
+            sales_pride = #{salesPride}
         where
             menu_code = #{menuCode}
     </update>

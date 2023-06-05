@@ -23,14 +23,14 @@ DROP TABLE IF EXISTS `admin_menu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin_menu` (
-  `code` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
+  `menu_code` int NOT NULL AUTO_INCREMENT,
+  `menu_name` varchar(100) NOT NULL,
   `day` varchar(45) NOT NULL,
   `meals` varchar(45) NOT NULL,
-  `age1` int NOT NULL,
-  `age2` int NOT NULL,
-  `sales-pride` varchar(45) NOT NULL,
-  PRIMARY KEY (`code`)
+  `menu_age1` int NOT NULL,
+  `menu_age2` int NOT NULL,
+  `sales_pride` varchar(45) NOT NULL,
+  PRIMARY KEY (`menu_code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin_menu` (
 
 LOCK TABLES `admin_menu` WRITE;
 /*!40000 ALTER TABLE `admin_menu` DISABLE KEYS */;
-INSERT INTO `admin_menu` VALUES (1,'맛있는 고기 냠냠','평일','중식',90000,50000,'상시'),(2,'맛있는 고기 뇸뇸','주말','석식',100000,700000,'한정'),(3,'맛있는 고기 앙앙','주말','중식',80000,30000,'한정'),(4,'맛있는 고기 옹옹','평일','석식',90000,50000,'상시');
+INSERT INTO `admin_menu` VALUES (1,'맛있는 고기 냠냠','평일','중식',90000,50000,'상시'),(2,'맛있는 고기 뇸뇸','주말','석식',70000,60000,'한정'),(3,'맛있는 고기 앙앙','주말','중식',80000,40000,'한정'),(4,'맛있는 고기 옹옹','평일','석',90000,50000,'상시');
 /*!40000 ALTER TABLE `admin_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-22  9:03:24
+-- Dump completed on 2023-06-01 22:19:11

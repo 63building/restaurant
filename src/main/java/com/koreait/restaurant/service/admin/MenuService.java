@@ -48,6 +48,7 @@ public class MenuService {
         return menuRepository.searchMenu(searchReqDto);
     }
 
+
     public void registerMenu(MenuReqDto menuReqDto) {
         duplicateMenuCode(menuReqDto.getMenuCode());
         menuRepository.saveMenu(menuReqDto);

@@ -109,6 +109,8 @@ class SearchMenuService {
         const contentContainer = document.querySelector(".content-container");
 
         console.log(responseData);
+        // <img src="/static/images/food w1.png" alt="음식사진" class="menu-img"></img>
+        // <img src="http://localhost:8000/image/menu/${data.saveName != null ? data.saveName : "no_img.png"}" class="menu-img">
         responseData.forEach((data, index) => {
             contentContainer.innerHTML += `
             <div class="content-flex">
@@ -118,7 +120,6 @@ class SearchMenuService {
                             <img src="http://localhost:8000/image/menu/${data.saveName != null ? data.saveName : "no_img.png"}" class="menu-img">
                         </div>                    
                         <div class="menu-info">
-                            <input type="hidden" class="menu-id" value="${data.menuId}">
                             <div class="menu-code">${data.menuCode}</div>
                             <h3 class="menu-name">${data.menuName}</h2>
                             <div class="info-text3">
@@ -132,11 +133,7 @@ class SearchMenuService {
                             <div class="info-text2">
                                 <div class="info-text sales-pride"><b>판매기간: </b>${data.salesPride}</div>
                             </div>
-                            <div class="info-text4">
-                                <div class="info-text explanation"><b><상세설명></b></div>
-                                <div class="info-text explanation">${data.explanation}</div>
-                            </div>
-                            <div class="menu-icon">
+                                <div class="menu-icon">
                                 <div class="menu-change"><a href="/templates/admin/menu_correction.html?menuCode=${data.menuCode}"><i class="fa-solid fa-wand-magic-sparkles"></i></a></div>
                                 <button type="button" class="delete-button"><i class="fa-solid fa-eraser"></i></button>
                             </div>
@@ -144,6 +141,7 @@ class SearchMenuService {
                     </div>
                 </div>
             </div>
+
 
             `;
         })
