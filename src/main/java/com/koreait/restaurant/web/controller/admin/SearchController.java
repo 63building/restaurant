@@ -1,4 +1,4 @@
-package com.koreait.restaurant.web.controller.reserve_Check;
+package com.koreait.restaurant.web.controller.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -59,7 +59,7 @@ class CheckApi {
             dataType: "json",
             success: (response) => {
                 alert("예약 취소가 완료 되었습니다.");
-				location.href = `http://localhost:8000/check/input`;
+				location.href = `http://localhost:8000/check/page`;
             },
             error: (error) => {
                 alert("예약 취소가 실패 되었습니다. 관리자에게 문의하세요.");

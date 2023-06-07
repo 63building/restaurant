@@ -90,7 +90,7 @@ class SearchMenuService {
         }
         return this.#instance;
     }
-
+j
     setMaxPage() {
         const totalCount = SearchMenuApi.getInstance().getTotalCount();
         maxPage = totalCount % 10 == 0 
@@ -117,7 +117,7 @@ class SearchMenuService {
                 <div class="info-container">
                     <div class="menu-desc">
                         <div class="img-container">
-                            <img src="http://localhost:8000/image/menu/${data.saveName != null ? data.saveName : "no_img.png"}" class="menu-img">
+                            <img src="http://localhost:8000/image/menu/${data.saveName != null ? data.saveName : "no_img_ryan.png"}" class="menu-img">
                         </div>                    
                         <div class="menu-info">
                             <div class="menu-code">${data.menuCode}</div>
