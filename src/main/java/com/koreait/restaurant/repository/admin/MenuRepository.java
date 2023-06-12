@@ -12,7 +12,7 @@ import com.koreait.restaurant.web.dto.reserve_Main_Update.MenuListDto;
 import java.util.List;
 
 @Mapper
-public interface    MenuRepository {
+public interface MenuRepository {
     //admin
     public int getMenuTotalCount(SearchNumberListReqDto searchNumberListReqDto);
     public List<MenuMst> searchMenu(SearchReqDto searchSReqDto);

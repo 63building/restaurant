@@ -30,6 +30,7 @@ public class AdminController {
     @GetMapping("/menu/management")
     public String menuManagement() {
         return "/admin/menu_management";
+
     }
 
     @GetMapping("/register")

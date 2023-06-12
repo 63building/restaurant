@@ -77,16 +77,10 @@ class ComponentEvent {
        
             const checkReserve = new CheckReserve(reserveIdValue1, numberValue, reserveIdValue2, reserveNameValue);
 
-            // if((reserveIdValue1 != null) && (numberValue !=  null)) {
-            //     location.href = `http://localhost:8000/check?reserveId=${reserveIdValue1}&number=${numberValue}`;
-            // } 
-           
-            if(reserveIdValue1.value == "" && numberValue == "") {
-                alert("아이디를 입력해주세요.");
-            } else {
+            if((reserveIdValue1 != null) && (numberValue !=  null)) {
                 location.href = `http://localhost:8000/check?reserveId=${reserveIdValue1}&number=${numberValue}`;
-            }
-
+            } 
+           
             ReservePageApi.getInstance().getReserveNumberPage(checkReserve);
 
             

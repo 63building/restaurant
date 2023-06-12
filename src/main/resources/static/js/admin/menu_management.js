@@ -4,6 +4,9 @@ window.onload = () => {
     SearchMenuService.getInstance().setMaxPage();
     ComponentEvent.getInstance().addScrollEventPaging();
     ComponentEvent.getInstance().addClickEventDeleteButton();
+    ComponentEvent.getInstance().addClickEventRoadReservationManagement();
+    ComponentEvent.getInstance().addClickEventRoadMenuManagement();
+    ComponentEvent.getInstance().addClickEventRoadMenuRegistration();
 }
 
 let maxPage = 0;
@@ -90,7 +93,7 @@ class SearchMenuService {
         }
         return this.#instance;
     }
-j
+
     setMaxPage() {
         const totalCount = SearchMenuApi.getInstance().getTotalCount();
         maxPage = totalCount % 10 == 0 
@@ -109,7 +112,7 @@ j
         const contentContainer = document.querySelector(".content-container");
 
         console.log(responseData);
-        // <img src="/static/images/food w1.png" alt="음식사진" class="menu-img"></img>
+        // <img src="/static/images/food w1.png" alt="음식사진" class="menu-img">
         // <img src="http://localhost:8000/image/menu/${data.saveName != null ? data.saveName : "no_img.png"}" class="menu-img">
         responseData.forEach((data, index) => {
             contentContainer.innerHTML += `
@@ -117,7 +120,7 @@ j
                 <div class="info-container">
                     <div class="menu-desc">
                         <div class="img-container">
-                            <img src="http://localhost:8000/image/menu/${data.saveName != null ? data.saveName : "no_img_ryan.png"}" class="menu-img">
+                            <img src="/static/images/food w1.png" alt="음식사진" class="menu-img">
                         </div>                    
                         <div class="menu-info">
                             <div class="menu-code">${data.menuCode}</div>
@@ -184,4 +187,28 @@ class ComponentEvent {
         })
     }
 
+    addClickEventRoadReservationManagement() {
+        const reservationManagement = document.querySelector(".reservation-management");
+
+        reservationManagement.onclick = () => {
+            location.href = `http://localhost:8000/admin/reservation/management`;
+        }
+
+    }
+
+    addClickEventRoadMenuManagement() {
+        const menuManagement = document.querySelector(".menu-management");
+
+        menuManagement.onclick = () => {
+            location.href = `http://localhost:8000/admin/menu/management`;
+        }
+    }
+
+    addClickEventRoadMenuRegistration() {
+        const menuRegistration = document.querySelector(".menu-registration");
+
+        menuRegistration.onclick = () => {
+            location.href = `http://localhost:8000/admin/register`;
+        }
+    }
 }
