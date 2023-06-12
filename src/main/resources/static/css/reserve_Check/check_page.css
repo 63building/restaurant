@@ -1,46 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-* {
-    box-sizing: border-box;
-    font-size: 14px;
-}
-  
-html,body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-  
-.header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    
-    margin: 0px;
-    border: 1cm;
-    padding: 30px 20px 40px;
-  
-    width: 100%;
-    height: 150px;
-  
-    color: white;
-    background-color: #183a1d;
-    font-size: 100px;
-}
-
-
-.home-button {
-    position: fixed;
-    left: 96%;
-    bottom: 92%;
-
-    padding-right: 50px;
-
-    color: white;
-=======
->>>>>>> origin/Reserve
 .header-container {
     width: 100%;
     height: 120px;
@@ -86,10 +43,6 @@ nav h5 {
     font-size: 14px;
 
     cursor: pointer;
-<<<<<<< HEAD
-=======
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
 }
 
 ::-webkit-scrollbar {
@@ -115,62 +68,6 @@ nav h5 {
     justify-content: center;
     align-items: center;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    margin: 20px;
-    padding: 10px;
-}
-
-.page-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 50px;
-}
-
-.title-line{
-margin: 0px;
-
-width: 401px;
-height: 3px;
-
-background-color: #dddddd;
-}
-
-.message {
-    margin: 0;
-    padding: 2px;
-}
-
-.select {
-    margin: 40px;
-
-    cursor: pointer;
-}
-
-.reserve-search {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin: 0px;
-    width: 835px;
-    height: 40px;
-
-    border: 1px solid #E1EEDD;
-
-    cursor: pointer;
-}
-
-ul.reserve-search{
-	list-style: none;
-
-	margin: 0px;
-	padding: 0px;
-=======
->>>>>>> origin/Reserve
     margin-top: 20px;
     padding: 10px;
     width: 100%;
@@ -249,33 +146,10 @@ ul.reserve-search{
     font-weight: 700;
 
     cursor: pointer;
-<<<<<<< HEAD
-=======
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
 }
 
 .reserve-change {
     display: inline-block;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-    margin: 1px;
-    padding-bottom: 5px;
-    width: 420px;
-
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    background: #E1EEDD;
-}
-
-.reserve-change:hover {
-    background-color: #434242;
-    color: white;
-=======
->>>>>>> origin/Reserve
     
     margin: 0;
     width: 420px;
@@ -309,45 +183,17 @@ ul.reserve-search{
     border: 1px solid #333;
     border-radius: 5px;
 
-<<<<<<< HEAD
-=======
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
 }
 
 .serve-container.current{
 	display: inherit;
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-.serve-container{
-    display: none;
-
-    margin-top: 10px;
-    height: 350px;
-    
-    border: 1px solid #183a1d;
-    border-radius: 5px;
-}
-
-.third-container {
-    display: flex;
-    justify-content: space-between;
-
-    margin: 40px 40px 40px 150px;
-=======
->>>>>>> origin/Reserve
 .input-container {
     display: flex;
     justify-content: space-between;
 
     margin: 40px;
-<<<<<<< HEAD
-=======
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
 }
 
 .p-group {
@@ -355,46 +201,21 @@ ul.reserve-search{
     flex-direction: column;
     justify-content: center;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    margin: 23px 30px 25px 40px;
-
-=======
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
     width: 100px;
     font-weight: bold;
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> origin/Reserve
 .number-telephone {
     margin: 10px;
     height: 20px;
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
 .reserve-number1, .reserve-number2 {
     font-size: 20px;
 }
 
 .number-telephone1, .number-telephone2 {
-<<<<<<< HEAD
     margin: 15px;
-=======
-<<<<<<< HEAD
-    margin: 15px 0px;
-=======
-    margin: 15px;
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
 
     font-size: 20px;
 }
@@ -404,35 +225,11 @@ ul.reserve-search{
     flex-direction: column;
     justify-content: center;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    margin-top: 34px;
-=======
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
 
     cursor: pointer;
 }
 
 .input-contents {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    cursor: pointer;
-}
-
-.check-error {
-    margin-bottom: 20px;
-    font-size: 11px;
-    color: red;
-}
-
-.reserve-number {
-    margin-bottom: 20px;
-}
-=======
->>>>>>> origin/Reserve
     margin: 10px;
     padding: 5px;
     height: 25px;
@@ -442,10 +239,6 @@ ul.reserve-search{
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
 
 .main-button {
     display: flex;
@@ -461,26 +254,12 @@ ul.reserve-search{
     height: 90px;
 
     border-radius: 3px;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    background-color: #434242;
-
-=======
->>>>>>> origin/Reserve
     color: white;
     background-color: #434242;
 
     font-size: 18px;
     font-weight: bold;
 
-<<<<<<< HEAD
-=======
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
     cursor: pointer;
 }
 
@@ -488,37 +267,10 @@ ul.reserve-search{
     background-color: #183a1d;
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-.search-group {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-
-    margin: 0px;
-}
-
-=======
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
 .search-number {
     margin: 40px 5px 0px 40px;
     padding: 10px;
 
     font-size: 15px;
     color: #a39e9e;
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-}
-
-
-
-
-
-=======
-}
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve

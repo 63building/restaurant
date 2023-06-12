@@ -7,7 +7,7 @@ window.onload = () => {
     ComponentEvent.getInstance().addClickEventRoadReservationManagement();
     ComponentEvent.getInstance().addClickEventRoadMenuManagement();
     ComponentEvent.getInstance().addClickEventRoadMenuRegistration();
-z` `}
+}
 
 let maxPage = 0;
 
@@ -112,10 +112,7 @@ class SearchMenuService {
         const contentContainer = document.querySelector(".content-container");
 
         console.log(responseData);
-<<<<<<< HEAD
-=======
-        // <img src="/static/images/food w1.png" alt="음식사진" class="menu-img"></img>
->>>>>>> origin/Reserve
+        // <img src="/static/images/food w1.png" alt="음식사진" class="menu-img">
         // <img src="http://localhost:8000/image/menu/${data.saveName != null ? data.saveName : "no_img.png"}" class="menu-img">
         responseData.forEach((data, index) => {
             contentContainer.innerHTML += `

@@ -3,27 +3,19 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<<<<<<< HEAD
-<mapper namespace="com.koreait.restaurant.repository.admin.MenuRepository">
-=======
-<<<<<<< HEAD
-<mapper namespace="com.koreait.restaurant.repository.reserve_Main_Update.MenuRepository">
-=======
-<mapper namespace="com.koreait.restaurant.repository.admin.MenuRepository">
->>>>>>> origin/BookCheck&Cancle
->>>>>>> origin/Reserve
+<mapper namespace="com.koreait.restaurant.repository.reserve_Main_Update.MainMenuRepository">
     <select id="getMenuList"
             resultType="com.koreait.restaurant.web.dto.reserve_Main_Update.MenuListDto">
         select
-            img_id as imgId,
-            title_name as titleName,
-            appetizer,
-            sub_main as subMain,
-            main_main as mainMain,
-            dessert,
-            price
+        img_id as imgId,
+        title_name as titleName,
+        appetizer,
+        sub_main as subMain,
+        main_main as mainMain,
+        dessert,
+        price
         from
-            view_mainpage
+        view_mainpage
     </select>
 
 

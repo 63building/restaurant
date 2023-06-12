@@ -1,5 +1,9 @@
 package com.koreait.restaurant.web.advice;
 
+import com.koreait.restaurant.Exception.CustomLikeException;
+import com.koreait.restaurant.Exception.CustomRentalException;
+
+import com.koreait.restaurant.Exception.CustomValidationException;
 import com.koreait.restaurant.web.dto.CMRespDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

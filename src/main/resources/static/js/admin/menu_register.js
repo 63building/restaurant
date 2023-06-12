@@ -16,7 +16,8 @@ const menuObj = {
     meals: "",
     menuAge1: "",
     menuAge2: "",
-    salesPride: ""
+    salesPride: "",
+    explanation: ""
 }
 
 const fileObj = {
@@ -99,10 +100,6 @@ class MenuRegisterService {
         menuObj.menuAge1 = registerInputs[3].value;
         menuObj.menuAge2 = registerInputs[4].value;
         menuObj.salesPride = registerInputs[5].value;
-<<<<<<< HEAD
-        menuObj.explanation = registerInputs[6].value;
-=======
->>>>>>> origin/Reserve
     }
 
     setErrors(errors) {
@@ -122,11 +119,6 @@ class MenuRegisterService {
                 errorMessages[4].innerHTML = errors[key];
             }else if(key == "salesPride") {
                 errorMessages[5].innerHTML = errors[key];
-<<<<<<< HEAD
-            }else if(key == "explanation") {
-                errorMessages[6].innerHTML = errors[key];
-=======
->>>>>>> origin/Reserve
             }
         })
     }
@@ -254,7 +246,6 @@ class ComponentEvent {
         }
     }
 
-<<<<<<< HEAD
     addClickEventRoadReservationManagement() {
         const reservationManagement = document.querySelector(".reservation-management");
 
@@ -279,6 +270,4 @@ class ComponentEvent {
             location.href = `http://localhost:8000/admin/register`;
         }
     }
-=======
->>>>>>> origin/Reserve
 }
