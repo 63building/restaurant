@@ -4,9 +4,6 @@ window.onload = () => {
     SearchMenuService.getInstance().setMaxPage();
     ComponentEvent.getInstance().addScrollEventPaging();
     ComponentEvent.getInstance().addClickEventDeleteButton();
-    ComponentEvent.getInstance().addClickEventRoadReservationManagement();
-    ComponentEvent.getInstance().addClickEventRoadMenuManagement();
-    ComponentEvent.getInstance().addClickEventRoadMenuRegistration();
 }
 
 let maxPage = 0;
@@ -187,28 +184,4 @@ class ComponentEvent {
         })
     }
 
-    addClickEventRoadReservationManagement() {
-        const reservationManagement = document.querySelector(".reservation-management");
-
-        reservationManagement.onclick = () => {
-            location.href = `http://localhost:8000/admin/reservation/management`;
-        }
-
-    }
-
-    addClickEventRoadMenuManagement() {
-        const menuManagement = document.querySelector(".menu-management");
-
-        menuManagement.onclick = () => {
-            location.href = `http://localhost:8000/admin/menu/management`;
-        }
-    }
-
-    addClickEventRoadMenuRegistration() {
-        const menuRegistration = document.querySelector(".menu-registration");
-
-        menuRegistration.onclick = () => {
-            location.href = `http://localhost:8000/admin/register`;
-        }
-    }
 }

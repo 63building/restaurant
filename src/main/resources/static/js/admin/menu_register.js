@@ -4,9 +4,6 @@ window.onload = () => {
     ComponentEvent.getInstance().addChangeEventImgFile();
     ComponentEvent.getInstance().addClickEventImgRegisterButton();
     ComponentEvent.getInstance().addClickEventImgCancelButton();
-    ComponentEvent.getInstance().addClickEventRoadReservationManagement();
-    ComponentEvent.getInstance().addClickEventRoadMenuManagement();
-    ComponentEvent.getInstance().addClickEventRoadMenuRegistration();
 }
 
 const menuObj = {
@@ -246,28 +243,4 @@ class ComponentEvent {
         }
     }
 
-    addClickEventRoadReservationManagement() {
-        const reservationManagement = document.querySelector(".reservation-management");
-
-        reservationManagement.onclick = () => {
-            location.href = `http://localhost:8000/admin/reservation/management`;
-        }
-
-    }
-
-    addClickEventRoadMenuManagement() {
-        const menuManagement = document.querySelector(".menu-management");
-
-        menuManagement.onclick = () => {
-            location.href = `http://localhost:8000/admin/menu/management`;
-        }
-    }
-
-    addClickEventRoadMenuRegistration() {
-        const menuRegistration = document.querySelector(".menu-registration");
-
-        menuRegistration.onclick = () => {
-            location.href = `http://localhost:8000/admin/register`;
-        }
-    }
 }
