@@ -17,36 +17,49 @@
 
 </head>
 <body>
-<div id="container">
-    <header class="header-container">
-        <h1 class="admin-logo"><a href="http://localhost:8000/admin/main"><i class="fa-solid fa-utensils"></i></a></h1>
-        <h1 class="store">HotSix</h1>
-        <ul class="menu-login">
-            <li><a href="admin_login.html">로그아웃</a></li>
-        </ul>
-    </header>
+    <div id="container">
+        <header class="header-container">
+            <h1 class="admin-logo"><a href="/admin/main"><i class="fa-solid fa-utensils"></i></a></h1>
+            <h1 class="store">HotSix</h1>
+            <ul class="menu-login">
+                <li><a href="/admin/login">로그아웃</a></li>
+            </ul>
+        </header>
 
-    <aside class="left-aside">
-        <div class="aside-title">
-            <h1 class="hotsix">HotSix</h1>
-        </div>
-        <nav class="main-menu">
-            <div class="menu-first-container menu-menu">
-                <h2>☆예약관리☆</h2>
-                <ul class="sub-menu">
-                    <li class="reservation-management menu">예약정보 조회</li>
-                </ul>
+        <aside class="left-aside">
+            <div class="aside-title">
+                <h1 class="hotsix">HotSix</h1>
             </div>
-            <div class="menu-second-container menu-menu">
-                <h2>☆MENU☆</h2>
-                <ul class="sub-menu">
-                    <li class="menu-management menu">메뉴 관리</li>
-                    <li class="menu-registration menu">메뉴 등록</li>
-                </ul>
-            </div>
-        </nav>
-    </aside>
+            <nav class="main-menu">
+                <div class="menu-first-container menu-menu">
+                    <h2>☆예약관리☆</h2>
+                    <ul class="sub-menu">
+                        <li class="reservation-management menu"><a href="/admin/reservation/management">예약정보 조회</a></li>
+                    </ul>
+                </div>
+                <div class="menu-second-container menu-menu">
+                    <h2>☆MENU☆</h2>
+                    <ul class="sub-menu">
+                        <li class="menu-management menu"><a href="/admin/menu/management">메뉴 관리</a></li>
+                        <li class="menu-registration menu"><a href="/admin/register">메뉴 등록</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
 
+        <main class="main-container">
+            <div class="title">
+                <h2 class="hello">!!welcome!!</h2>
+                <div class="text">
+                    <h1 class="hotsix">HotSix레스토랑</h1>
+                    <h1 class="page">관리자 페이지입니다.</h1>
+                    <h1 class="welcome">환영합니다.</h1>
+                </div>
+            </div> 
+        </main>
+    </div>
+
+<<<<<<< HEAD
     <main class="main-container">
         <div class="title">
             <h2 class="hello">!!welcome!!</h2>
@@ -60,5 +73,7 @@
 </div>
 
 <script src="/static/js/admin/left_aside.js"></script>
+=======
+>>>>>>> origin/BookCheck&Cancle
 </body>
 </html>
