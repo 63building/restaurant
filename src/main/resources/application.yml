@@ -15,8 +15,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-    url: jdbc:mysql://localhost:3306/restaurant
-    username: root
+    url: public-hotsix-rds.cxkzclvqze2g.ap-northeast-2.rds.amazonaws.com
+    username: admin
     password: 1q2w3e4r
 
 
