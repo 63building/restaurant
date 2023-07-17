@@ -94,7 +94,7 @@ class MenuListEvent {
         }
 
         reserveCheck.onclick = () => {
-            location.href = `http://localhost:8000/check/input`;
+            location.href = `http://localhost:8000/check/page`;
         }
     }
 
