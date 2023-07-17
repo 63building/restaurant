@@ -86,7 +86,7 @@ class MenuListEvent {
     }
 
     addClickEventButton() {
-        const reserve = document.querySelector(".resv");
+        const reserve = document.querySelector(".reserve");
         const reserveCheck = document.querySelector(".reserve-check");
 
         reserve.onclick = () => {
