@@ -15,7 +15,7 @@ const sendcheckObj={
 }
 
 document.addEventListener('scroll', () => {
-	if (window.scrollY > homeHeight) {
+	if (window.scrollY >= homeHeight) {
 		homeScroll.classList.add('active');
 	} else {
 		homeScroll.classList.remove('active');

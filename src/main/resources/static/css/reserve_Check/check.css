@@ -24,6 +24,18 @@ nav h5 {
     font-size: 50px;
 }
 
+#home {
+    position: fixed;
+    top: 4%;
+    left: 96%;
+
+    color: white;
+}
+
+#home.active {
+    color: #FFC60B;
+}
+
 .home-button {
     width: 70px;
 
@@ -33,6 +45,7 @@ nav h5 {
 .home-button a {
     color: #FFC60B;
 }
+
 ::-webkit-scrollbar {
     width: 15px;
 }
