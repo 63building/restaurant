@@ -171,7 +171,7 @@ class ComponentEvent {
 		const changeButton = document.querySelector(".change-button");
 
 		changeButton.onclick = () => {
-			location.href = `http://localhost:8000/reservation/modification`;
+			location.href = `http://localhost:8000/update`;
 		}
 	}
 
