@@ -300,6 +300,14 @@ button {
     cursor: pointer;
 }
 
+.reservation-cancel-button a {
+    font-weight: bolder;
+    font-size: 20px;
+
+    color: black;
+    text-decoration: none;
+}
+
 .modification-button {
     cursor: pointer;
 }
