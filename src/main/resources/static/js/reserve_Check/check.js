@@ -181,15 +181,20 @@ class ComponentEvent {
 		const url = location.search;
 
 		deleteButton.onclick = () => {
-			
 			let urlParams = new URLSearchParams(url);
 			let reserveId = urlParams.get('reserveId')
 			
+			if(!confirm("정말로 예약을 취소하시겠습니까?")) {
+				location.href = `http://localhost:8000/check/page`;
+				return false;
+    		}
+
 			localStorage.removeItem(reserveId)
 			
 			CheckApi.getInstance().reserveDataDeleteRequest(reserveId);
 
 		}
 	}
+
 	
 }
