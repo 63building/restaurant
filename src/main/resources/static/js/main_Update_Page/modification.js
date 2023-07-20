@@ -115,8 +115,15 @@ class ReservationModificationService {
   loadModifyValue() {
     var loadSetValue = document.querySelector(".modification-button");
     loadSetValue.onclick = () => {
+
+      if(!confirm("예약을 변경하시겠습니까?")) {
+        
+        return false;
+      }
+
       ReservationModificationService.getInstance().setModifyValue();
       ModificationApi.getInstance().modifyReserveInfo();
+      location.reload();
       console.log(Modifyvalue);
     };
   }
